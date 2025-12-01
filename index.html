@@ -5,472 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bondo Square Sports Bar | Where Moments Become Memories</title>
 
-  <!-- SEO -->
-  <meta name="description"
-        content="Bondo Square Sports Bar – the heartbeat of Bondo. Live sports, premium drinks, great food, events and unforgettable vibes." />
-  <meta name="keywords"
-        content="Bondo Square Sports Bar, sports bar Bondo, lounge Bondo, live sports Bondo, nightlife Bondo" />
-  <meta name="author" content="Bondo Square Sports Bar" />
+  <meta name="description" content="Bondo Square Sports Bar – Live sports, amazing music, great food, and unforgettable vibes in Bondo." />
+  <meta name="keywords" content="Sports Bar, Bondo Lounge, Bondo Square, Nightlife Bondo, Live Sports Kenya" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Bondo Square Sports Bar" />
-  <meta property="og:description"
-        content="Where passion meets relaxation and every gathering feels like home." />
-  <meta property="og:type" content="website" />
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root{
-      --bg-dark:#050508;
-      --bg-card:#11111a;
-      --accent:#f5b800;
-      --accent-soft:rgba(245,184,0,0.14);
-      --text:#f8f8f8;
-      --muted:#b3b3c2;
-      --danger:#ff3366;
-      --success:#00c896;
-      --shadow-lg:0 18px 40px rgba(0,0,0,0.7);
-      --radius-xl:22px;
-      --radius-lg:18px;
+      --bg:#07070c;
+      --card:#11111a;
+      --accent:#e7b300;
+      --muted:#c5c5d3;
+      --text:#fff;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,0.7);
     }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:var(--bg);color:var(--text);line-height:1.6;}
 
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Poppins',sans-serif;
-      background:radial-gradient(circle at top, #18182a 0, #050508 55%);
-      color:var(--text);
-      line-height:1.6;
-      scroll-behavior:smooth;
-    }
-
-    /* SCROLLBAR */
-    ::-webkit-scrollbar{width:8px;}
-    ::-webkit-scrollbar-track{background:#050508;}
-    ::-webkit-scrollbar-thumb{background:var(--accent-soft);border-radius:4px;}
-    ::-webkit-scrollbar-thumb:hover{background:var(--accent);}
-
-    /* NAVBAR */
     header{
-      position:fixed;top:0;left:0;width:100%;z-index:1000;
-      backdrop-filter:blur(18px);
-      background:linear-gradient(to bottom,rgba(0,0,0,0.9),rgba(0,0,0,0.3));
-      border-bottom:1px solid rgba(255,255,255,0.06);
+      position:fixed;top:0;left:0;width:100%;
+      background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,0.07);z-index:1000;
     }
     .nav{
-      max-width:1200px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 20px;
+      max-width:1200px;margin:auto;padding:12px 20px;
+      display:flex;justify-content:space-between;align-items:center;
     }
-    .nav-logo{
-      display:flex;align-items:center;gap:10px;
-    }
-    .logo-circle{
-      width:40px;height:40px;border-radius:50%;
-      border:2px solid var(--accent);
-      display:flex;align-items:center;justify-content:center;
-      background:radial-gradient(circle,#302000,#050508);
-      box-shadow:0 0 14px rgba(245,184,0,0.7);
-      font-size:18px;color:var(--accent);
-    }
-    .nav-logo-text{
-      display:flex;flex-direction:column;line-height:1.1;
-    }
-    .nav-logo-text span:first-child{
-      font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
-    }
-    .nav-logo-text span:last-child{
-      font-size:11px;color:var(--muted);
-    }
-    .nav-links{
-      display:flex;align-items:center;gap:20px;font-size:14px;
-    }
+    .nav-logo{display:flex;align-items:center;gap:12px;}
+    .nav-logo img{height:42px;width:42px;border-radius:50%;object-fit:cover;}
+    .nav-links{display:flex;gap:20px;}
     .nav-links a{
-      color:var(--muted);text-decoration:none;position:relative;
-      text-transform:uppercase;font-weight:500;letter-spacing:0.06em;
+      text-decoration:none;color:var(--muted);font-size:14px;
+      text-transform:uppercase;letter-spacing:.1em;
     }
-    .nav-links a::after{
-      content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
-      background:var(--accent);transition:width .25s ease;
-    }
-    .nav-links a:hover{color:var(--text);}
-    .nav-links a:hover::after{width:100%;}
-    .btn-nav{
-      padding:8px 16px;border-radius:999px;
-      border:1px solid rgba(245,184,0,0.6);background:var(--accent-soft);
-      color:var(--accent);font-size:13px;font-weight:600;text-decoration:none;
-      display:flex;align-items:center;gap:8px;
-    }
-    .btn-nav i{font-size:14px;}
+    .nav-links a:hover{color:var(--accent);}
 
-    .nav-toggle{
-      display:none;color:#fff;font-size:20px;cursor:pointer;
-    }
-
-    /* HERO */
     .hero{
-      max-width:1200px;margin:0 auto;
-      padding:120px 20px 80px;
-      display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
-      gap:40px;align-items:center;
+      padding:150px 20px 80px;
+      max-width:1200px;margin:auto;
+      display:grid;grid-template-columns:1.2fr 1fr;gap:40px;
     }
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:4px 10px;border-radius:999px;
-      background:rgba(0,0,0,0.7);border:1px solid rgba(245,184,0,0.5);
-      font-size:11px;text-transform:uppercase;letter-spacing:0.15em;
-      margin-bottom:10px;color:var(--accent);
-    }
-    .badge i{font-size:12px;}
     .hero h1{
-      font-size:clamp(32px,4vw,46px);margin-bottom:10px;
-      line-height:1.05;
+      font-size:44px;margin-bottom:10px;line-height:1.1;
     }
     .hero h1 span{
-      background:linear-gradient(120deg,#ffe18a,#f5b800,#ff8f3c);
+      background:linear-gradient(90deg,#ffe68a,#e7b300,#ff7f2a);
       -webkit-background-clip:text;color:transparent;
     }
-    .hero-sub{
-      color:var(--muted);font-size:14px;margin-bottom:18px;
+    .hero p{color:var(--muted);font-size:15px;margin-bottom:20px;}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{
+      padding:12px 22px;border-radius:999px;font-size:14px;
+      font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
     }
-    .hero-highlights{
-      display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px;
-    }
-    .hero-chip{
-      display:flex;align-items:center;gap:6px;
-      font-size:12px;border-radius:999px;
-      padding:6px 12px;background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-    }
-    .hero-actions{
-      display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;
-    }
-    .btn-primary,.btn-ghost{
-      text-decoration:none;display:inline-flex;align-items:center;
-      gap:8px;border-radius:999px;font-size:13px;font-weight:600;
-      padding:11px 20px;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#f5b800,#ff8f3c);
-      color:#000;box-shadow:var(--shadow-lg);border:none;
-    }
-    .btn-ghost{
-      border:1px solid rgba(255,255,255,0.15);
-      color:var(--text);background:rgba(0,0,0,0.5);
-    }
-    .hero-metrics{
-      display:flex;flex-wrap:wrap;gap:18px;font-size:12px;color:var(--muted);
-    }
-    .metric span{
-      display:block;
-    }
-    .metric strong{
-      font-size:18px;color:var(--accent);
-    }
+    .btn-primary{background:var(--accent);color:#000;box-shadow:var(--shadow);}
+    .btn-outline{border:1px solid var(--accent);color:var(--accent);}
 
-    /* HERO RIGHT */
     .hero-card{
-      border-radius:var(--radius-xl);
-      background:radial-gradient(circle at top,#27203a 0,#050508 60%);
-      padding:16px;
-      box-shadow:var(--shadow-lg);
-      border:1px solid rgba(255,255,255,0.06);
+      background:var(--card);padding:12px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.07);box-shadow:var(--shadow);
     }
-    .hero-preview{
-      border-radius:var(--radius-lg);
-      overflow:hidden;position:relative;
-      height:260px;
-      background:url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80')
-                 center/cover no-repeat;
-    }
-    .hero-overlay{
-      position:absolute;inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,0.85),transparent 55%);
-    }
-    .hero-preview-info{
-      position:absolute;left:16px;right:16px;bottom:12px;
-      display:flex;justify-content:space-between;align-items:flex-end;
-      font-size:12px;
-    }
-    .hp-left small{color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;}
-    .hp-left strong{display:block;font-size:16px;}
-    .hp-tag{
-      padding:6px 10px;border-radius:999px;
-      background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.2);
+    .hero-card img{
+      width:100%;height:260px;object-fit:cover;border-radius:var(--radius);
     }
 
-    .hero-stats-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);
-      gap:10px;margin-top:12px;font-size:11px;
+    .advert-section{
+      margin:60px auto;max-width:1200px;padding:20px;
     }
-    .hero-stat{
-      background:rgba(0,0,0,0.6);border-radius:var(--radius-lg);
-      padding:8px;display:flex;flex-direction:column;gap:4px;
+    .advert-section img{
+      width:100%;border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+
+    section{max-width:1200px;margin:auto;padding:40px 20px;}
+    .title{
+      font-size:28px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;
+    }
+    .subtitle{color:var(--muted);font-size:15px;margin-bottom:30px;}
+
+    .grid-3{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;
+    }
+    .card{
+      background:var(--card);padding:20px;border-radius:var(--radius);
       border:1px solid rgba(255,255,255,0.07);
     }
-    .hero-stat strong{font-size:15px;}
-    .hero-stat i{color:var(--accent);}
 
-    /* GENERIC SECTIONS */
-    section{
-      max-width:1200px;
-      margin:0 auto;
-      padding:40px 20px 10px;
+    .gallery{
+      column-count:3;column-gap:12px;margin-top:20px;
     }
-    .section-header{
-      display:flex;justify-content:space-between;align-items:flex-end;
-      gap:12px;margin-bottom:22px;
+    .gallery img{
+      width:100%;margin-bottom:12px;border-radius:var(--radius);
+      cursor:pointer;transition:0.3s;
     }
-    .section-title{
-      font-size:20px;text-transform:uppercase;letter-spacing:0.16em;
+    .gallery img:hover{opacity:0.85;}
+
+    #lightbox{
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      background:rgba(0,0,0,0.9);display:none;align-items:center;justify-content:center;
+      z-index:9999;
     }
-    .section-title span{
-      font-size:11px;display:block;color:var(--muted);
-      letter-spacing:0.2em;margin-bottom:3px;
-    }
-    .section-sub{
-      font-size:13px;color:var(--muted);max-width:420px;
+    #lightbox img{
+      max-width:90%;max-height:90%;border-radius:var(--radius);box-shadow:var(--shadow);
     }
 
-    /* GRID LAYOUTS */
-    .grid-3{
-      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
+    .contact-box{
+      background:var(--card);padding:20px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.07);
     }
-    .grid-2{
-      display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:18px;
-    }
+    .contact-row{margin:12px 0;display:flex;gap:10px;align-items:flex-start;}
+    .contact-row i{color:var(--accent);font-size:18px;margin-top:4px;}
 
-    /* CARDS */
-    .card{
-      background:var(--bg-card);
-      border-radius:var(--radius-lg);
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.06);
-    }
-    .card.highlight{
-      border-color:var(--accent-soft);
-      box-shadow:0 14px 30px rgba(0,0,0,0.7);
-      position:relative;overflow:hidden;
-    }
-    .card.highlight::before{
-      content:"";
-      position:absolute;inset:-40%;
-      background:conic-gradient(from 200deg at 0 0,#f5b80022,transparent,transparent,#ff336622,transparent);
-      opacity:0.9;mix-blend-mode:screen;pointer-events:none;
-    }
-    .card.highlight > *{position:relative;}
-
-    .chip{
-      display:inline-flex;align-items:center;gap:6px;
-      font-size:11px;padding:4px 10px;border-radius:999px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.1);
-      margin-bottom:8px;
-    }
-
-    /* WHY US */
-    .why-icon{
-      width:32px;height:32px;border-radius:12px;
-      background:var(--accent-soft);display:flex;align-items:center;justify-content:center;
-      margin-bottom:10px;color:var(--accent);
-    }
-    .why-title{font-size:15px;margin-bottom:6px;}
-    .why-text{font-size:12px;color:var(--muted);}
-
-    /* SPORTS SCHEDULE */
-    .schedule-row{
-      display:flex;justify-content:space-between;align-items:center;
-      font-size:12px;padding:10px 0;
-      border-bottom:1px dashed rgba(255,255,255,0.07);
-    }
-    .schedule-row:last-child{border-bottom:none;}
-    .badge-live{
-      font-size:11px;padding:3px 8px;border-radius:999px;
-      background:rgba(255,51,102,0.14);color:var(--danger);
-    }
-
-    /* MENU */
-    .menu-pill{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:11px;margin-bottom:10px;color:var(--muted);
-    }
-    .menu-price{
-      font-size:13px;font-weight:600;color:var(--accent);
-    }
-    .menu-tag{
-      font-size:11px;color:var(--success);
-    }
-
-    /* PACKAGES */
-    .package-name{font-size:15px;font-weight:600;margin-bottom:6px;}
-    .package-price{font-size:20px;font-weight:700;color:var(--accent);}
-    .package-list{
-      margin-top:8px;font-size:12px;color:var(--muted);
-      list-style:none;padding-left:0;
-    }
-    .package-list li{margin-bottom:4px;}
-    .package-badge{
-      font-size:10px;padding:3px 8px;border-radius:999px;
-      background:var(--accent-soft);color:var(--accent);text-transform:uppercase;
-      letter-spacing:0.14em;
-    }
-
-    /* GALLERY */
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-    }
-    .gallery-item{
-      border-radius:16px;overflow:hidden;
-      position:relative;aspect-ratio:4/3;
-    }
-    .gallery-item img{
-      width:100%;height:100%;object-fit:cover;
-      transform:scale(1.01);transition:transform .35s ease,filter .35s ease;
-      filter:saturate(1.1);
-    }
-    .gallery-item:hover img{
-      transform:scale(1.06);
-      filter:saturate(1.3) brightness(1.05);
-    }
-    .gallery-label{
-      position:absolute;left:10px;bottom:8px;
-      font-size:10px;padding:4px 8px;border-radius:999px;
-      background:rgba(0,0,0,0.7);
-      border:1px solid rgba(255,255,255,0.15);
-    }
-
-    /* TESTIMONIALS */
-    .testimonial-quote{
-      font-size:13px;color:var(--muted);
-      margin-bottom:12px;
-    }
-    .testimonial-meta{
-      font-size:12px;display:flex;justify-content:space-between;align-items:center;
-      color:var(--muted);
-    }
-    .stars{color:#ffcc4a;font-size:12px;}
-
-    /* CONTACT SECTION */
-    .contact-grid{
-      display:grid;grid-template-columns:2fr 3fr;gap:18px;
-    }
-    .contact-row{
-      display:flex;align-items:flex-start;gap:10px;font-size:13px;
-      margin-bottom:10px;color:var(--muted);
-    }
-    .contact-row i{
-      width:22px;margin-top:3px;color:var(--accent);
-    }
-    .hours-grid{
-      display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:4px;
-      font-size:11px;color:var(--muted);
-    }
-    .hours-grid span:first-child{color:#f0f0f0;}
-
-    .map-embed{
-      border-radius:var(--radius-lg);overflow:hidden;
-      border:1px solid rgba(255,255,255,0.15);
-      min-height:220px;
-    }
-    .map-embed iframe{width:100%;height:100%;border:0;}
-
-    /* CTA STRIP */
-    .cta-strip{
-      max-width:1200px;margin:10px auto 30px;
-      padding:14px 20px 16px;
-      border-radius:18px;
-      background:linear-gradient(90deg,#f5b800,#ff3366);
-      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-      gap:10px;
-      font-size:13px;color:#180b00;
-    }
-    .cta-strip strong{font-size:15px;}
-    .cta-actions{
-      display:flex;flex-wrap:wrap;gap:8px;
-    }
-    .cta-btn{
-      text-decoration:none;border-radius:999px;
-      padding:8px 14px;font-size:12px;font-weight:600;
-      display:inline-flex;align-items:center;gap:6px;
-      background:rgba(0,0,0,0.03);color:#1a0b00;
-      border:1px solid rgba(0,0,0,0.12);
-    }
-
-    /* FOOTER */
     footer{
-      border-top:1px solid rgba(255,255,255,0.08);
-      padding:18px 20px 26px;
-      font-size:11px;color:var(--muted);
-    }
-    .footer-inner{
-      max-width:1200px;margin:0 auto;
-      display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
-      align-items:center;
-    }
-    .footer-links{
-      display:flex;gap:12px;flex-wrap:wrap;
-    }
-    .footer-links a{
-      color:var(--muted);text-decoration:none;
-    }
-    .socials{
-      display:flex;gap:8px;font-size:14px;
-    }
-    .socials a{
-      width:26px;height:26px;border-radius:999px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.1);
-      color:var(--muted);text-decoration:none;
-    }
-    .socials a:hover{color:var(--accent);border-color:var(--accent-soft);}
-
-    /* BACK TO TOP */
-    #backToTop{
-      position:fixed;right:14px;bottom:16px;
-      width:34px;height:34px;border-radius:999px;
-      background:var(--accent);color:#000;
-      display:flex;align-items:center;justify-content:center;
-      font-size:16px;border:none;cursor:pointer;
-      box-shadow:var(--shadow-lg);opacity:0;
-      transform:translateY(20px);pointer-events:none;
-      transition:opacity .25s ease,transform .25s ease;
-      z-index:900;
-    }
-    #backToTop.show{
-      opacity:1;transform:translateY(0);pointer-events:auto;
+      text-align:center;padding:20px;color:var(--muted);
+      margin-top:30px;font-size:13px;
     }
 
-    /* RESPONSIVE */
-    @media(max-width:900px){
-      .hero{
-        grid-template-columns:1fr;
-      }
-      .hero-card{order:-1;}
-      .grid-3{grid-template-columns:repeat(2,minmax(0,1fr));}
-      .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+    @media(max-width:820px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{column-count:2;}
     }
-    @media(max-width:720px){
-      .nav-links{display:none;position:absolute;left:0;right:0;top:56px;padding:10px 16px;
-                 background:rgba(0,0,0,0.96);flex-direction:column;}
-      .nav-links.show{display:flex;}
-      .nav-toggle{display:block;}
-      .hero{padding-top:110px;}
-      .section-header{flex-direction:column;align-items:flex-start;}
-      .grid-3,.grid-2{grid-template-columns:1fr;}
-      .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-      .contact-grid{grid-template-columns:1fr;}
-    }
-    @media(max-width:460px){
-      .gallery-grid{grid-template-columns:1fr;}
+    @media(max-width:500px){
+      .gallery{column-count:1;}
     }
   </style>
 </head>
@@ -480,621 +137,144 @@
 <header>
   <div class="nav">
     <div class="nav-logo">
-      <div class="logo-circle">B</div>
-      <div class="nav-logo-text">
-        <span>Bondo Square Sports Bar</span>
-        <span>Where Moments Become Memories</span>
-      </div>
+      <img src="logo.png" alt="Logo">
+      <span>Bondo Square Sports Bar</span>
     </div>
-
-    <div class="nav-toggle" id="navToggle">
-      <i class="fa-solid fa-bars-staggered"></i>
-    </div>
-
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#why">Why Us</a>
-      <a href="#sports">Sports</a>
-      <a href="#menu">Menu</a>
+      <a href="#advert">Events</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Visit Us</a>
-      <a href="https://wa.me/254769285959" class="btn-nav">
-        <i class="fa-brands fa-whatsapp"></i> Book Now
-      </a>
     </nav>
   </div>
 </header>
 
-<main>
+<div class="hero">
+  <div>
+    <h1>Welcome to <span>Bondo Square Sports Bar</span></h1>
+    <p>Where unforgettable vibes meet live sports, good food, great music and the best people.</p>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div>
-      <div class="badge">
-        <i class="fa-solid fa-location-dot"></i>
-        BONDO • KENYA • LIVE SPORTS LOUNGE
-      </div>
-
-      <h1>
-        The <span>Heartbeat of Bondo</span> for Live Sports, Food & Nightlife.
-      </h1>
-
-      <p class="hero-sub">
-        From derby-day madness to chilled Sunday grooves, Bondo Square Sports Bar
-        is where passion meets relaxation and every gathering feels like home.
-      </p>
-
-      <div class="hero-highlights">
-        <div class="hero-chip"><i class="fa-solid fa-tv"></i> Multiple big screens</div>
-        <div class="hero-chip"><i class="fa-solid fa-martini-glass-citrus"></i> Signature cocktails</div>
-        <div class="hero-chip"><i class="fa-solid fa-music"></i> Curated DJ playlists</div>
-        <div class="hero-chip"><i class="fa-solid fa-users"></i> Perfect for groups & dates</div>
-      </div>
-
-      <div class="hero-actions">
-        <a href="https://wa.me/254769285959?text=Hi%20Bondo%20Square,%20I%20would%20like%20to%20book%20a%20table."
-           class="btn-primary">
-          <i class="fa-brands fa-whatsapp"></i> Reserve Table Now
-        </a>
-        <a href="#sports" class="btn-ghost">
-          <i class="fa-solid fa-play"></i> See Today’s Live Games
-        </a>
-      </div>
-
-      <div class="hero-metrics">
-        <div class="metric">
-          <span><strong>7</strong> Days a Week</span>
-          <span>Open till late night</span>
-        </div>
-        <div class="metric">
-          <span><strong>4+</strong> Big Screens</span>
-          <span>Football • Rugby • Fights</span>
-        </div>
-        <div class="metric">
-          <span><strong>1000+</strong> Happy Guests</span>
-          <span>Memories made & counting</span>
-        </div>
-      </div>
-    </div>
-
-    <aside class="hero-card" aria-label="Preview of bar atmosphere">
-      <div class="hero-preview">
-        <!-- Replace Unsplash with your own bar image if you want -->
-        <div class="hero-overlay"></div>
-        <div class="hero-preview-info">
-          <div class="hp-left">
-            <small>LIVE TONIGHT</small>
-            <strong>Derby Night • 9:00 PM</strong>
-          </div>
-          <div class="hp-tag">
-            <i class="fa-solid fa-fire-flame-curved"></i> Vibes guaranteed
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-stats-grid">
-        <div class="hero-stat">
-          <span><i class="fa-solid fa-futbol"></i> Featured Game</span>
-          <strong>Arsenal vs Man City</strong>
-          <span>Kick off 7:30 PM</span>
-        </div>
-        <div class="hero-stat">
-          <span><i class="fa-solid fa-mug-hot"></i> Happy Hour</span>
-          <strong>5–7 PM</strong>
-          <span>On selected drinks</span>
-        </div>
-        <div class="hero-stat">
-          <span><i class="fa-solid fa-couch"></i> VIP Lounge</span>
-          <strong>By Booking</strong>
-          <span>Perfect for groups & dates</span>
-        </div>
-      </div>
-    </aside>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-header">
-      <div class="section-title">
-        <span>WELCOME TO BONDO SQUARE</span>
-        About the Bar
-      </div>
-      <p class="section-sub">
-        Not just a bar — a community spot where games, food, music and friendship
-        blend into unforgettable nights.
-      </p>
-    </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:12px;">
-          Bondo Square Sports Bar is designed for sports lovers, food enthusiasts
-          and good-vibes-only crowds. Whether you’re celebrating a big win,
-          unwinding after work or planning a special date, this is your home base.
-        </p>
-        <p style="font-size:13px;color:var(--muted);">
-          Expect crisp screens, clear sound, friendly staff and a curated menu
-          of local favourites and bar classics. Every detail is tuned to make
-          your night smooth, safe and memorable.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="chip">
-          <i class="fa-solid fa-shield-heart"></i> Safe, comfortable & welcoming
-        </div>
-        <div class="grid-2" style="margin-top:8px;font-size:12px;color:var(--muted);gap:14px;">
-          <div>
-            <strong style="font-size:15px;color:var(--accent);">Perfect for:</strong><br/>
-            • Live football nights<br/>
-            • Group hangouts & birthdays<br/>
-            • Corporate after-work drinks<br/>
-            • Romantic evenings
-          </div>
-          <div>
-            <strong style="font-size:15px;color:var(--accent);">What you get:</strong><br/>
-            • Fast service<br/>
-            • Great music<br/>
-            • Reliable security<br/>
-            • Clean, stylish setting
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why">
-    <div class="section-header">
-      <div class="section-title">
-        <span>WHY GUESTS LOVE US</span>
-        World-Class Bar Experience
-      </div>
-      <p class="section-sub">
-        We benchmark ourselves against top sports bars globally, while keeping
-        the warmth and authenticity of Bondo.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="why-icon"><i class="fa-solid fa-tv"></i></div>
-        <div class="why-title">Elite Sports Viewing</div>
-        <div class="why-text">
-          Multiple HD screens, surround sound and carefully arranged seating
-          so you never miss a moment — from Premier League to NBA and beyond.
-        </div>
-      </div>
-
-      <div class="card highlight">
-        <div class="why-icon"><i class="fa-solid fa-martini-glass-citrus"></i></div>
-        <div class="why-title">Signature Food & Drinks</div>
-        <div class="why-text">
-          A menu that respects local favourites while borrowing from global bar trends:
-          nyama choma, loaded fries, wings, cocktails, mocktails and premium spirits.
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="why-icon"><i class="fa-solid fa-star"></i></div>
-        <div class="why-title">Atmosphere & Service</div>
-        <div class="why-text">
-          Professional staff, curated playlists, mood lighting and a safe environment.
-          Come in as a guest, leave as part of the Bondo Square family.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPORTS SCHEDULE -->
-  <section id="sports">
-    <div class="section-header">
-      <div class="section-title">
-        <span>TONIGHT & COMING UP</span>
-        Live Sports Line-Up
-      </div>
-      <p class="section-sub">
-        Sample schedule – you can update times and matches daily. Guests can also
-        call or WhatsApp to confirm what’s showing.
-      </p>
-    </div>
-
-    <div class="grid-2">
-      <div class="card">
-        <div class="chip">
-          <i class="fa-solid fa-bolt"></i> Today’s Big Games
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>Arsenal vs Man City</strong><br/>
-            <span style="color:var(--muted);">Premier League</span>
-          </div>
-          <div style="text-align:right;">
-            <span class="badge-live"><i class="fa-solid fa-circle"></i> 7:30 PM</span><br/>
-            <span style="font-size:11px;color:var(--muted);">Main Screen</span>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>Barcelona vs Real Madrid</strong><br/>
-            <span style="color:var(--muted);">La Liga</span>
-          </div>
-          <div style="text-align:right;">
-            <span>10:00 PM</span><br/>
-            <span style="font-size:11px;color:var(--muted);">VIP Section</span>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>UFC Fight Night</strong><br/>
-            <span style="color:var(--muted);">Main Card</span>
-          </div>
-          <div style="text-align:right;">
-            <span>Midnight</span><br/>
-            <span style="font-size:11px;color:var(--muted);">By Request</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="chip">
-          <i class="fa-solid fa-headphones-simple"></i> Music & Events
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>Friday: After-Work Groove</strong><br/>
-            <span style="color:var(--muted);">DJ set • 6:00 – Late</span>
-          </div>
-          <div style="text-align:right;">
-            <span>Reserved tables</span><br/>
-            <span style="font-size:11px;color:var(--muted);">Book via WhatsApp</span>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>Saturday: Jersey Night</strong><br/>
-            <span style="color:var(--muted);">Wear your team colours</span>
-          </div>
-          <div style="text-align:right;">
-            <span>Drink offers</span><br/>
-            <span style="font-size:11px;color:var(--muted);">From 7:00 PM</span>
-          </div>
-        </div>
-        <div class="schedule-row">
-          <div>
-            <strong>Sunday: Chill & Brunch</strong><br/>
-            <span style="color:var(--muted);">Relaxed vibes</span>
-          </div>
-          <div style="text-align:right;">
-            <span>From 2:00 PM</span><br/>
-            <span style="font-size:11px;color:var(--muted);">Family friendly</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MENU -->
-  <section id="menu">
-    <div class="section-header">
-      <div class="section-title">
-        <span>FOOD • DRINKS • BITINGS</span>
-        Signature Menu Highlights
-      </div>
-      <p class="section-sub">
-        Below is a sample menu – you can easily swap prices and items anytime.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="menu-pill">
-          <i class="fa-solid fa-drumstick-bite"></i>
-          Grills & Mains
-        </div>
-        <h3 style="font-size:15px;margin-bottom:4px;">Nyama Choma Platter</h3>
-        <div class="menu-price">From KES 900</div>
-        <div class="menu-tag">Perfect for sharing (2–4 pax)</div>
-        <p style="font-size:12px;color:var(--muted);margin-top:8px;">
-          Tender, slow-grilled meat served with kachumbari and choice of ugali,
-          fries or wedges.
-        </p>
-      </div>
-
-      <div class="card highlight">
-        <div class="menu-pill">
-          <i class="fa-solid fa-burger"></i>
-          Bar Favourites
-        </div>
-        <h3 style="font-size:15px;margin-bottom:4px;">Loaded Fries & Wings Combo</h3>
-        <div class="menu-price">From KES 750</div>
-        <div class="menu-tag">Best-seller • Game-night special</div>
-        <p style="font-size:12px;color:var(--muted);margin-top:8px;">
-          Crispy fries with toppings plus spiced wings, designed for big games and sharing.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="menu-pill">
-          <i class="fa-solid fa-champagne-glasses"></i>
-          Drinks & Cocktails
-        </div>
-        <h3 style="font-size:15px;margin-bottom:4px;">Signature House Cocktails</h3>
-        <div class="menu-price">From KES 450</div>
-        <div class="menu-tag">Happy Hour: 5 – 7 PM</div>
-        <p style="font-size:12px;color:var(--muted);margin-top:8px;">
-          A curated list of mixed drinks, classics and mocktails to match any mood.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGES / VIP -->
-  <section id="packages">
-    <div class="section-header">
-      <div class="section-title">
-        <span>GROUPS • BIRTHDAYS • DATES</span>
-        VIP & Special Packages
-      </div>
-      <p class="section-sub">
-        Choose a package or talk to us for a custom deal tailored to your squad.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="package-badge">After-Work</div>
-        <div class="package-name">Weekday Chill Bundle</div>
-        <div class="package-price">KES 4,500</div>
-        <ul class="package-list">
-          <li>• Reserved table for up to 4</li>
-          <li>• Selected drinks bucket</li>
-          <li>• Fries or light bitings</li>
-          <li>• Ideal for office squads</li>
-        </ul>
-      </div>
-
-      <div class="card highlight">
-        <div class="package-badge">Most Popular</div>
-        <div class="package-name">Match Day Squad Package</div>
-        <div class="package-price">KES 9,500</div>
-        <ul class="package-list">
-          <li>• VIP seating (up to 8 pax)</li>
-          <li>• Drinks bucket + cocktail jug</li>
-          <li>• Wings, loaded fries & nyama platter</li>
-          <li>• Name card on table & shout-out</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="package-badge">Celebrations</div>
-        <div class="package-name">Birthday / Anniversary</div>
-        <div class="package-price">From KES 12,000</div>
-        <ul class="package-list">
-          <li>• Decorated table or corner</li>
-          <li>• Cake arrangement (by request)</li>
-          <li>• Custom playlist moment</li>
-          <li>• Photos & content-friendly setup</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="section-header">
-      <div class="section-title">
-        <span>INSIDE BONDO SQUARE</span>
-        Atmosphere & Vibes
-      </div>
-      <p class="section-sub">
-        Replace these sample photos with your own interior, crowd and food images
-        for a fully branded look.
-      </p>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="Bar interior" />
-        <div class="gallery-label">Main Bar</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="Drinks" />
-        <div class="gallery-label">Cocktails & Drinks</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Food" />
-        <div class="gallery-label">Signature Food</div>
-      </div>
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=800&q=80" alt="Crowd watching sports" />
-        <div class="gallery-label">Match Day Crowd</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="reviews">
-    <div class="section-header">
-      <div class="section-title">
-        <span>WHAT GUESTS ARE SAYING</span>
-        Reviews & Word of Mouth
-      </div>
-      <p class="section-sub">
-        Social proof is global currency. Add real reviews from Google, Facebook
-        or WhatsApp screenshots here.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="testimonial-quote">
-          “Best place in Bondo to watch football. Screens everywhere, sound on point
-          and the food comes hot and fast.”
-        </div>
-        <div class="testimonial-meta">
-          <span>Brian, Regular</span>
-          <span class="stars">
-            ★★★★★
-          </span>
-        </div>
-      </div>
-
-      <div class="card highlight">
-        <div class="testimonial-quote">
-          “We celebrated my birthday here and the team went out of their way to make
-          it special. Highly recommend the VIP lounge.”
-        </div>
-        <div class="testimonial-meta">
-          <span>Stacy, Birthday Guest</span>
-          <span class="stars">
-            ★★★★★
-          </span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="testimonial-quote">
-          “After work we don’t even argue about where to go. Bondo Square is the
-          default choice. Good music, secure parking and fair prices.”
-        </div>
-        <div class="testimonial-meta">
-          <span>Local Team, Office Group</span>
-          <span class="stars">
-            ★★★★★
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA STRIP -->
-  <div class="cta-strip">
-    <div>
-      <strong>Planning a big game, birthday or office hangout?</strong><br/>
-      Talk to us for a custom package that fits your squad and budget.
-    </div>
-    <div class="cta-actions">
-      <a href="https://wa.me/254769285959" class="cta-btn">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp Reservations
-      </a>
-      <a href="tel:+254769285959" class="cta-btn">
-        <i class="fa-solid fa-phone"></i> Call the Bar
-      </a>
+    <div class="hero-buttons">
+      <a href="https://wa.me/254769285959" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i>Book Now</a>
+      <a href="#gallery" class="btn btn-outline">View Gallery</a>
     </div>
   </div>
 
-  <!-- CONTACT & MAP -->
-  <section id="contact">
-    <div class="section-header">
-      <div class="section-title">
-        <span>FIND US • TALK TO US</span>
-        Location & Contact
-      </div>
-      <p class="section-sub">
-        Reach out any time for bookings, enquiries, private events and collaborations.
-      </p>
+  <div class="hero-card">
+    <img src="gallery/0.jpg" alt="Hero Image">
+  </div>
+</div>
+
+<section class="advert-section" id="advert">
+  <h2 class="title">Upcoming Event</h2>
+  <p class="subtitle">Don’t miss out! This week’s special event happening at Bondo Square.</p>
+  <img src="advert.jpg" alt="Event Advert">
+</section>
+
+<section id="about">
+  <h2 class="title">About Us</h2>
+  <p class="subtitle">Bondo’s #1 spot for live football, music, chill vibes, good food & photos.</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>Live Sports</h3>
+      <p>Multiple full HD screens showing Premier League, Champions League, Rugby, NBA, UFC and more.</p>
     </div>
 
-    <div class="contact-grid">
-      <div class="card">
-        <div class="contact-row">
-          <i class="fa-solid fa-location-dot"></i>
-          <div>
-            <strong>Address</strong><br/>
-            Bondo Town, Siaya County, Kenya<br/>
-            (Update with exact street or landmark)
-          </div>
-        </div>
-        <div class="contact-row">
-          <i class="fa-solid fa-phone"></i>
-          <div>
-            <strong>Phone & WhatsApp</strong><br/>
-            <a href="tel:+254769285959" style="color:var(--accent);text-decoration:none;">+254 769 285 959</a><br/>
-            <a href="https://wa.me/254769285959" style="color:var(--muted);text-decoration:none;">
-              Chat with us on WhatsApp
-            </a>
-          </div>
-        </div>
-        <div class="contact-row">
-          <i class="fa-solid fa-clock"></i>
-          <div>
-            <strong>Opening Hours</strong><br/>
-            <div class="hours-grid">
-              <span>Mon – Thu</span><span>4:00 PM – Late</span>
-              <span>Fri – Sat</span><span>3:00 PM – Late</span>
-              <span>Sunday</span><span>2:00 PM – 11:00 PM</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact-row">
-          <i class="fa-solid fa-envelope"></i>
-          <div>
-            <strong>Email</strong><br/>
-            <span>info@bondosquaresportsbar.com</span> <!-- Replace with real email -->
-          </div>
-        </div>
-      </div>
-
-      <div class="map-embed">
-        <!-- Replace src with your actual Google Maps embed link -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m3!1d0!2d34.277!3d-0.058!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1700000000000"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Map to Bondo Square Sports Bar">
-        </iframe>
-      </div>
+    <div class="card">
+      <h3>Mood & Vibes</h3>
+      <p>Perfect music, great people, premium lighting and a warm atmosphere you will always remember.</p>
     </div>
-  </section>
 
-</main>
+    <div class="card">
+      <h3>Food & Drinks</h3>
+      <p>Nyama choma, wings, cocktails, cold beer, signature plates and the best service in town.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2 class="title">Our Moments</h2>
+  <p class="subtitle">Real pictures captured at Bondo Square — authentic vibes.</p>
+
+  <div class="gallery">
+    <img src="gallery/0.jpg">
+    <img src="gallery/01.jpg">
+    <img src="gallery/1.jpg">
+    <img src="gallery/02.jpg">
+    <img src="gallery/2.jpg">
+    <img src="gallery/03.jpg">
+    <img src="gallery/3.jpg">
+    <img src="gallery/04.jpg">
+    <img src="gallery/4.jpg">
+    <img src="gallery/05.jpg">
+    <img src="gallery/5.jpg">
+    <img src="gallery/06.jpg">
+    <img src="gallery/6.jpg">
+    <img src="gallery/07.jpg">
+    <img src="gallery/7.jpg">
+    <img src="gallery/08.jpg">
+    <img src="gallery/8.jpg">
+    <img src="gallery/09.jpg">
+    <img src="gallery/9.jpg">
+    <img src="gallery/10.jpg">
+    <img src="gallery/11.jpg">
+    <img src="gallery/12.jpg">
+    <img src="gallery/13.jpg">
+    <img src="gallery/14.jpg">
+    <img src="gallery/15.jpg">
+    <img src="gallery/16.jpg">
+    <img src="gallery/17.jpg">
+    <img src="gallery/18.jpg">
+    <img src="gallery/19.jpg">
+    <img src="gallery/20.jpg">
+    <img src="gallery/21.jpg">
+    <img src="gallery/22.jpg">
+  </div>
+</section>
+
+<div id="lightbox">
+  <img id="lightbox-img" src="">
+</div>
+
+<section id="contact">
+  <h2 class="title">Visit Us</h2>
+  <p class="subtitle">We are open every day till late. Book a table anytime.</p>
+
+  <div class="contact-box">
+    <div class="contact-row">
+      <i class="fa-solid fa-location-dot"></i>
+      <div><strong>Address:</strong><br>Bondo Town, Siaya County, Kenya</div>
+    </div>
+
+    <div class="contact-row">
+      <i class="fa-solid fa-phone"></i>
+      <div><strong>Phone:</strong><br><a href="tel:+254769285959" style="color:var(--accent)">+254 769 285 959</a></div>
+    </div>
+
+    <div class="contact-row">
+      <i class="fa-brands fa-whatsapp"></i>
+      <div><strong>WhatsApp:</strong><br><a href="https://wa.me/254769285959" style="color:var(--accent)">Chat with us</a></div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="footer-inner">
-    <div>
-      © <span id="year"></span> Bondo Square Sports Bar. All Rights Reserved.
-    </div>
-    <div class="footer-links">
-      <a href="#top">Back to top</a>
-      <a href="#contact">Contact</a>
-      <a href="#reviews">Reviews</a>
-    </div>
-    <div class="socials">
-      <a href="https://wa.me/254769285959" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-  </div>
+  © <script>document.write(new Date().getFullYear())</script> Bondo Square Sports Bar.
 </footer>
 
-<button id="backToTop" aria-label="Back to top">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-
 <script>
-  // Current year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
 
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
+  document.querySelectorAll(".gallery img").forEach(img=>{
+    img.addEventListener("click",()=>{
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    });
   });
 
-  // Back to top & scroll handling
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 450) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  });
+  lightbox.addEventListener("click",()=>lightbox.style.display="none");
 </script>
 
 </body>
