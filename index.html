@@ -325,7 +325,7 @@
 
     .hero-card{
       background:radial-gradient(circle at top,#2a1c5c 0,var(--dark) 60%);
-      padding:12px;border-radius:var(--radius);
+      padding:16px;border-radius:var(--radius);
       border:1px solid rgba(255,255,255,0.12);
       box-shadow:var(--shadow-lg);
       position:relative;
@@ -333,11 +333,77 @@
       transform:perspective(800px) rotateX(0deg) rotateY(0deg);
       transition:transform 0.6s ease;
     }
-    .hero-card img{
-      width:100%;height:260px;object-fit:cover;border-radius:var(--radius);
-    }
     .hero-card:hover{
       transform:perspective(800px) rotateX(4deg) rotateY(-4deg) translateY(-4px);
+    }
+
+    /* FIXTURES WIDGET */
+    .fixtures-title{
+      font-size:14px;
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      color:#fff;
+      margin-bottom:6px;
+    }
+    .fixtures-sub{
+      font-size:11px;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    .fixtures-leagues{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:10px;
+    }
+    .fixtures-chip{
+      font-size:10px;
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.3);
+      background:rgba(5,0,30,0.85);
+      color:var(--muted);
+    }
+    .fixtures-chip.main{
+      border-color:var(--club2);
+      color:var(--club2);
+      background:rgba(0,229,255,0.12);
+    }
+    .fixtures-list{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:4px;
+    }
+    .fixture-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:11px;
+      padding:7px 9px;
+      border-radius:12px;
+      background:rgba(2,0,20,0.9);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    .fixture-teams{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .fixture-league-tag{
+      font-size:9px;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      color:var(--muted);
+    }
+    .fixture-match{
+      font-size:11px;
+      color:#fff;
+    }
+    .fixture-time{
+      font-size:11px;
+      text-align:right;
+      color:var(--club2);
     }
 
     /* REVEAL */
@@ -741,8 +807,64 @@
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="Bondo Square preview">
-      <img src="0.jpg" alt="Night ambience at Bondo Square Nightclub & Sports Bar">
+    <!-- HERO FIXTURES PANEL -->
+    <aside class="hero-card" aria-label="Top leagues fixtures">
+      <div class="fixtures-title">Tonight’s Fixtures</div>
+      <div class="fixtures-sub">Top leagues on screen at Bondo Square (including FKF Premier League).</div>
+
+      <div class="fixtures-leagues">
+        <span class="fixtures-chip main">EPL</span>
+        <span class="fixtures-chip">La Liga</span>
+        <span class="fixtures-chip">Serie A</span>
+        <span class="fixtures-chip">UCL</span>
+        <span class="fixtures-chip">FKF Premier League (KPL)</span>
+      </div>
+
+      <div class="fixtures-list">
+        <div class="fixture-row">
+          <div class="fixture-teams">
+            <span class="fixture-league-tag">EPL</span>
+            <span class="fixture-match">Arsenal vs. Man City</span>
+          </div>
+          <div class="fixture-time">
+            8:30 PM<br><span style="font-size:9px;color:var(--muted);">Main screen</span>
+          </div>
+        </div>
+
+        <div class="fixture-row">
+          <div class="fixture-teams">
+            <span class="fixture-league-tag">LA LIGA</span>
+            <span class="fixture-match">Real Madrid vs. Barcelona</span>
+          </div>
+          <div class="fixture-time">
+            11:00 PM<br><span style="font-size:9px;color:var(--muted);">Side screens</span>
+          </div>
+        </div>
+
+        <div class="fixture-row">
+          <div class="fixture-teams">
+            <span class="fixture-league-tag">UCL</span>
+            <span class="fixture-match">Bayern vs. PSG</span>
+          </div>
+          <div class="fixture-time">
+            10:00 PM<br><span style="font-size:9px;color:var(--muted);">With live commentary</span>
+          </div>
+        </div>
+
+        <div class="fixture-row">
+          <div class="fixture-teams">
+            <span class="fixture-league-tag">FKF PL (KPL)</span>
+            <span class="fixture-match">Gor Mahia vs. AFC Leopards</span>
+          </div>
+          <div class="fixture-time">
+            6:00 PM<br><span style="font-size:9px;color:var(--muted);">Early kick-off</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fixtures-sub" style="margin-top:10px;font-size:10px;">
+        Fixtures are examples – update them daily with the actual games you’re showing.
+      </div>
     </aside>
   </section>
 
