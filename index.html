@@ -332,23 +332,51 @@
       overflow:hidden;
       transform:perspective(800px) rotateX(0deg) rotateY(0deg);
       transition:transform 0.6s ease;
+      display:flex;
+      flex-direction:column;
     }
     .hero-card:hover{
       transform:perspective(800px) rotateX(4deg) rotateY(-4deg) translateY(-4px);
     }
 
-    /* FIXTURES WIDGET */
-    .fixtures-title{
-      font-size:14px;
-      letter-spacing:0.16em;
-      text-transform:uppercase;
-      color:#fff;
-      margin-bottom:6px;
+    .hero-card-inner{
+      display:flex;
+      gap:12px;
+      align-items:stretch;
+      height:100%;
     }
-    .fixtures-sub{
+    .fixtures-info{
+      flex:1;
+      min-width:0;
+    }
+    .fixtures-image{
+      flex:0 0 42%;
+      display:flex;
+      align-items:stretch;
+    }
+    .fixtures-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    /* FIXTURES WIDGET */
+    .fixtures-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .fixtures-header h3{
+      font-size:14px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+    }
+    .fixtures-header span{
       font-size:11px;
       color:var(--muted);
-      margin-bottom:12px;
     }
     .fixtures-leagues{
       display:flex;
@@ -356,33 +384,31 @@
       gap:6px;
       margin-bottom:10px;
     }
-    .fixtures-chip{
+    .fixtures-league-pill{
       font-size:10px;
-      padding:4px 9px;
+      padding:4px 8px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,0.3);
-      background:rgba(5,0,30,0.85);
-      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.25);
+      background:rgba(3,0,22,0.8);
     }
-    .fixtures-chip.main{
-      border-color:var(--club2);
-      color:var(--club2);
-      background:rgba(0,229,255,0.12);
+    .fixtures-league-pill.main{
+      background:linear-gradient(120deg,var(--club1),var(--club2));
+      color:#000;
+      border:none;
     }
     .fixtures-list{
       display:flex;
       flex-direction:column;
-      gap:8px;
-      margin-top:4px;
+      gap:6px;
+      font-size:11px;
     }
     .fixture-row{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      font-size:11px;
-      padding:7px 9px;
+      padding:6px 8px;
       border-radius:12px;
-      background:rgba(2,0,20,0.9);
+      background:rgba(5,0,30,0.8);
       border:1px solid rgba(255,255,255,0.08);
     }
     .fixture-teams{
@@ -390,20 +416,19 @@
       flex-direction:column;
       gap:2px;
     }
-    .fixture-league-tag{
-      font-size:9px;
-      text-transform:uppercase;
-      letter-spacing:0.12em;
-      color:var(--muted);
-    }
-    .fixture-match{
+    .fixture-teams strong{
       font-size:11px;
-      color:#fff;
     }
-    .fixture-time{
-      font-size:11px;
+    .fixture-meta{
       text-align:right;
-      color:var(--club2);
+      color:var(--muted);
+      font-size:10px;
+    }
+    .fixtures-note{
+      font-size:9px;
+      color:var(--muted);
+      margin-top:6px;
+      opacity:0.8;
     }
 
     /* REVEAL */
@@ -694,6 +719,13 @@
         padding-top:155px;
       }
       .hero-card{order:-1;margin-bottom:10px;}
+      .hero-card-inner{
+        flex-direction:column;
+      }
+      .fixtures-image{
+        flex:1 1 auto;
+        max-height:220px;
+      }
       .contact-box{grid-template-columns:1fr;}
       .gallery{column-count:2;}
     }
@@ -807,63 +839,79 @@
       </div>
     </div>
 
-    <!-- HERO FIXTURES PANEL -->
+    <!-- FIXTURES CARD WITH IMAGE -->
     <aside class="hero-card" aria-label="Top leagues fixtures">
-      <div class="fixtures-title">Tonight’s Fixtures</div>
-      <div class="fixtures-sub">Top leagues on screen at Bondo Square (including FKF Premier League).</div>
-
-      <div class="fixtures-leagues">
-        <span class="fixtures-chip main">EPL</span>
-        <span class="fixtures-chip">La Liga</span>
-        <span class="fixtures-chip">Serie A</span>
-        <span class="fixtures-chip">UCL</span>
-        <span class="fixtures-chip">FKF Premier League (KPL)</span>
-      </div>
-
-      <div class="fixtures-list">
-        <div class="fixture-row">
-          <div class="fixture-teams">
-            <span class="fixture-league-tag">EPL</span>
-            <span class="fixture-match">Arsenal vs. Man City</span>
+      <div class="hero-card-inner">
+        <div class="fixtures-info">
+          <div class="fixtures-header">
+            <h3>Top Leagues Fixtures</h3>
+            <span>Auto rotation</span>
           </div>
-          <div class="fixture-time">
-            8:30 PM<br><span style="font-size:9px;color:var(--muted);">Main screen</span>
+
+          <div class="fixtures-leagues">
+            <div class="fixtures-league-pill main">English Premier League</div>
+            <div class="fixtures-league-pill">La Liga</div>
+            <div class="fixtures-league-pill">Serie A</div>
+            <div class="fixtures-league-pill">UCL</div>
+            <div class="fixtures-league-pill main">KPL</div>
           </div>
+
+          <div class="fixtures-list">
+            <div class="fixture-row">
+              <div class="fixture-teams">
+                <strong>Loading...</strong>
+                <span>League</span>
+              </div>
+              <div class="fixture-meta">
+                <div>Time</div>
+                <div>Note</div>
+              </div>
+            </div>
+
+            <div class="fixture-row">
+              <div class="fixture-teams">
+                <strong>Loading...</strong>
+                <span>League</span>
+              </div>
+              <div class="fixture-meta">
+                <div>Time</div>
+                <div>Note</div>
+              </div>
+            </div>
+
+            <div class="fixture-row">
+              <div class="fixture-teams">
+                <strong>Loading...</strong>
+                <span>League</span>
+              </div>
+              <div class="fixture-meta">
+                <div>Time</div>
+                <div>Note</div>
+              </div>
+            </div>
+
+            <div class="fixture-row">
+              <div class="fixture-teams">
+                <strong>Loading...</strong>
+                <span>League</span>
+              </div>
+              <div class="fixture-meta">
+                <div>Time</div>
+                <div>Note</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="fixtures-note">
+            Fixtures rotate automatically. To update, just edit the list in the
+            JavaScript section – include EPL, La Liga, UCL, KPL and more.
+          </p>
         </div>
 
-        <div class="fixture-row">
-          <div class="fixture-teams">
-            <span class="fixture-league-tag">LA LIGA</span>
-            <span class="fixture-match">Real Madrid vs. Barcelona</span>
-          </div>
-          <div class="fixture-time">
-            11:00 PM<br><span style="font-size:9px;color:var(--muted);">Side screens</span>
-          </div>
+        <div class="fixtures-image">
+          <!-- Pick one strong photo here (change 01.jpg if you prefer another) -->
+          <img src="01.jpg" alt="Fans enjoying live match at Bondo Square">
         </div>
-
-        <div class="fixture-row">
-          <div class="fixture-teams">
-            <span class="fixture-league-tag">UCL</span>
-            <span class="fixture-match">Bayern vs. PSG</span>
-          </div>
-          <div class="fixture-time">
-            10:00 PM<br><span style="font-size:9px;color:var(--muted);">With live commentary</span>
-          </div>
-        </div>
-
-        <div class="fixture-row">
-          <div class="fixture-teams">
-            <span class="fixture-league-tag">FKF PL (KPL)</span>
-            <span class="fixture-match">Gor Mahia vs. AFC Leopards</span>
-          </div>
-          <div class="fixture-time">
-            6:00 PM<br><span style="font-size:9px;color:var(--muted);">Early kick-off</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fixtures-sub" style="margin-top:10px;font-size:10px;">
-        Fixtures are examples – update them daily with the actual games you’re showing.
       </div>
     </aside>
   </section>
@@ -1188,6 +1236,91 @@
   }, { threshold: 0.15 });
 
   reveals.forEach(el => observer.observe(el));
+
+  /* AUTO-ROTATING FIXTURES DATA */
+  const fixturesData = [
+    {
+      home:"Arsenal",
+      away:"Man City",
+      league:"Premier League",
+      time:"Sat • 7:30 PM",
+      label:"Live at Bondo Square"
+    },
+    {
+      home:"Liverpool",
+      away:"Chelsea",
+      league:"Premier League",
+      time:"Sun • 7:00 PM",
+      label:"Super Sunday Clash"
+    },
+    {
+      home:"Barcelona",
+      away:"Real Madrid",
+      league:"La Liga",
+      time:"Sun • 10:00 PM",
+      label:"El Clásico Night"
+    },
+    {
+      home:"Inter Milan",
+      away:"Juventus",
+      league:"Serie A",
+      time:"Sat • 9:45 PM",
+      label:"Italian Derby"
+    },
+    {
+      home:"PSG",
+      away:"Marseille",
+      league:"Ligue 1",
+      time:"Fri • 10:00 PM",
+      label:"Le Classique"
+    },
+    {
+      home:"Gor Mahia",
+      away:"AFC Leopards",
+      league:"KPL",
+      time:"Sun • 4:00 PM",
+      label:"KPL Big Derby"
+    },
+    {
+      home:"Tusker",
+      away:"Bandari",
+      league:"KPL",
+      time:"Sat • 3:00 PM",
+      label:"KPL Weekend Fixture"
+    },
+    {
+      home:"Champions League",
+      away:"Key Fixtures",
+      league:"UCL",
+      time:"Wed • 10:00 PM",
+      label:"All key games live"
+    }
+  ];
+
+  let fixturesOffset = 0;
+
+  function renderFixtures(){
+    const rows = document.querySelectorAll('.fixture-row');
+    if(!rows.length) return;
+
+    for(let i=0;i<rows.length;i++){
+      const data = fixturesData[(fixturesOffset + i) % fixturesData.length];
+      const teamsEl = rows[i].querySelector('.fixture-teams strong');
+      const leagueEl = rows[i].querySelector('.fixture-teams span');
+      const timeEl = rows[i].querySelector('.fixture-meta div:first-child');
+      const labelEl = rows[i].querySelector('.fixture-meta div:last-child');
+
+      if(teamsEl) teamsEl.textContent = `${data.home} vs ${data.away}`;
+      if(leagueEl) leagueEl.textContent = data.league;
+      if(timeEl) timeEl.textContent = data.time;
+      if(labelEl) labelEl.textContent = data.label;
+    }
+
+    fixturesOffset = (fixturesOffset + 1) % fixturesData.length;
+  }
+
+  renderFixtures();
+  setInterval(renderFixtures, 10000); // rotate every 10 seconds
 </script>
 
 </body>
