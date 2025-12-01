@@ -75,14 +75,13 @@
     .nav-left{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:10px;
     }
 
     .nav-logo-img{
-      width:42px;height:42px;border-radius:50%;
+      width:34px;height:34px;border-radius:50%;
       object-fit:cover;
-      border:2px solid var(--accent);
-      box-shadow:0 0 18px rgba(244,198,35,0.6);
+      border:1px solid rgba(244,198,35,0.8);
       background:#000;
     }
 
@@ -92,13 +91,13 @@
       line-height:1.1;
     }
     .nav-brand span:first-child{
-      font-size:15px;
+      font-size:14px;
       font-weight:700;
       letter-spacing:0.08em;
       text-transform:uppercase;
     }
     .nav-brand span:last-child{
-      font-size:11px;
+      font-size:10px;
       color:var(--muted);
     }
 
@@ -162,6 +161,28 @@
       grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
       gap:40px;
       align-items:center;
+    }
+
+    .hero-logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .hero-logo{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid rgba(244,198,35,0.9);
+      box-shadow:0 0 20px rgba(244,198,35,0.7);
+      background:#000;
+    }
+    .hero-logo-text{
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.16em;
     }
 
     .badge{
@@ -575,6 +596,10 @@
       .gallery{
         column-count:1;
       }
+      .hero-logo-wrap{
+        flex-direction:column;
+        align-items:flex-start;
+      }
     }
   </style>
 </head>
@@ -612,6 +637,14 @@
   <!-- HERO -->
   <section class="hero" id="top">
     <div>
+      <!-- BIG LOGO IN HERO -->
+      <div class="hero-logo-wrap">
+        <img src="logo.png" alt="Bondo Square Sports Bar Logo" class="hero-logo">
+        <div class="hero-logo-text">
+          BONDO SQUARE SPORTS BAR • OFFICIAL
+        </div>
+      </div>
+
       <div class="badge">
         <i class="fa-solid fa-location-dot"></i>
         BONDO • KENYA • SPORTS LOUNGE
