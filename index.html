@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bondo Square Sports Bar</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <style>
+        *{
+            margin:0; padding:0; box-sizing:border-box;
+            font-family:'Poppins', sans-serif;
+        }
+        body{
+            background:#111; color:#fff; line-height:1.6;
+        }
+        header{
+            width:100%; background:#000; padding:20px 40px;
+            display:flex; justify-content:space-between; align-items:center;
+            position:fixed; top:0; left:0; z-index:999;
+        }
+        header h1{ font-size:22px; color:gold; font-weight:700; }
+        header nav a{
+            margin-left:20px; color:#fff; text-decoration:none; font-size:15px;
+        }
+        header nav a:hover{ color:gold; }
+
+        /* HERO */
+        .hero{
+            height:95vh;
+            background:url('https://images.unsplash.com/photo-1580408180332-4f1e4cf7f75f') center/cover no-repeat;
+            display:flex; justify-content:center; align-items:center;
+            text-align:center; padding:20px;
+            margin-top:80px;
+        }
+        .hero h2{ font-size:40px; font-weight:700; text-shadow:0 0 10px #000; }
+        .hero p{ margin-top:10px; font-size:18px; }
+        .btn{
+            margin-top:20px; padding:12px 25px; background:gold; color:#000;
+            border-radius:5px; text-decoration:none; font-weight:600;
+        }
+
+        /* SECTIONS */
+        section{
+            padding:60px 40px;
+        }
+        h2.section-title{
+            font-size:32px; color:gold; margin-bottom:15px;
+            text-transform:uppercase; font-weight:700; text-align:center;
+        }
+        .about, .sports, .menu, .gallery, .contact{
+            max-width:1100px; margin:auto; text-align:center;
+        }
+
+        /* GALLERY */
+        .gallery-grid{
+            margin-top:25px;
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:20px;
+        }
+        .gallery-grid img{
+            width:100%; height:220px; object-fit:cover; border-radius:10px;
+        }
+
+        /* MENU */
+        .menu-item{
+            background:#1a1a1a; padding:20px; margin:15px 0;
+            border-radius:10px; border-left:5px solid gold;
+        }
+        .menu-item h3{ font-size:20px; color:gold; }
+
+        /* CONTACT */
+        .contact-info i{
+            font-size:20px; color:gold; margin-right:8px;
+        }
+        .contact-info div{ margin:15px 0; }
+
+        footer{
+            padding:20px; background:#000; text-align:center; color:#888;
+            margin-top:40px;
+        }
+        @media(max-width:700px){
+            header{ flex-direction:column; }
+            header nav{ margin-top:10px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>Bondo Square Sports Bar</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#sports">Sports</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h2>Where Moments Become Memories</h2>
+        <p>The No.1 Lounge in Bondo — Vibes • Sports • Good Food • Good People</p>
+        <a href="https://wa.me/254769285959" class="btn">Book via WhatsApp</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+    <div class="about">
+        <p>
+            Welcome to <b>Bondo Square Sports Bar</b>, the heartbeat of Bondo — where passion meets relaxation.
+            A place where every gathering feels like home. Come enjoy electrifying sports action, smooth music,
+            unforgettable meals, and the best company around.
+        </p>
+    </div>
+</section>
+
+<!-- SPORTS -->
+<section id="sports">
+    <h2 class="section-title">Live Sports</h2>
+    <div class="sports">
+        <p>We stream all major sports events:</p>
+        <ul style="list-style:none; margin-top:15px;">
+            <li>⚽ Premier League, La Liga, Champions League</li>
+            <li>🏀 NBA & EuroLeague</li>
+            <li>🎾 Tennis Grand Slams</li>
+            <li>🥊 Boxing & UFC Fights</li>
+            <li>🏉 Rugby — Local & International</li>
+        </ul>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+    <h2 class="section-title">Menu Highlights</h2>
+    <div class="menu">
+        
+        <div class="menu-item">
+            <h3>🥩 Nyama Choma</h3>
+            <p>Perfectly grilled, served fresh and juicy.</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>🍗 Chicken Wings</h3>
+            <p>Golden, crispy and unforgettable.</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>🍻 Ice Cold Drinks</h3>
+            <p>Beers, cocktails, spirits and soft drinks.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery">
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9" />
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1" />
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e" />
+            <img src="https://images.unsplash.com/photo-1595832637969-6a5f3427d63e" />
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact">
+
+        <div class="contact-info">
+            <div><i class="fa-solid fa-location-dot"></i> Bondo Town, Kenya</div>
+            <div><i class="fa-solid fa-phone"></i> +254 769 285 959</div>
+            <div><i class="fa-brands fa-whatsapp"></i> WhatsApp Bookings Available</div>
+        </div>
+
+        <a href="https://wa.me/254769285959" class="btn">Chat on WhatsApp</a>
+
+    </div>
+</section>
+
+<footer>
+    © 2025 Bondo Square Sports Bar. All Rights Reserved.
+</footer>
+
+</body>
+</html>
