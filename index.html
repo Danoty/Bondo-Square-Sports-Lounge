@@ -3,20 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bondo Square Sports Bar | Premium Lounge Experience</title>
+  <title>Bondo Square Sports Bar | Premium Lounge & Sports Experience</title>
 
   <!-- SEO -->
-  <meta name="description" content="Bondo Square Sports Bar – a world-class nightlife and sports lounge in Bondo. Luxury ambience, neon lights, premium drinks, live sports, and unforgettable vibes.">
-  <meta name="keywords" content="Bondo Square, Sports Lounge Kenya, Nightlife Bondo, Premium Bar, Live Sports Kenya">
+  <meta name="description" content="Bondo Square Sports Bar – a world-class nightlife and sports lounge in Bondo, Kenya. Luxury ambience, neon lights, premium drinks, live sports and unforgettable vibes.">
+  <meta name="keywords" content="Bondo Square, Sports Lounge Kenya, Nightlife Bondo, Premium Bar, Live Sports Kenya, Bondo Nightlife">
+  <meta name="author" content="Bondo Square Sports Bar" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bondo Square Sports Bar | Premium Sports Lounge in Bondo">
+  <meta property="og:description" content="Live sports, neon nights, premium sound and unforgettable vibes at Bondo Square Sports Bar in Bondo, Kenya.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
+  <!-- LocalBusiness JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Bondo Square Sports Bar",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bondo",
+      "addressRegion": "Siaya County",
+      "addressCountry": "KE"
+    },
+    "telephone": "+254791485669",
+    "url": "",
+    "servesCuisine": "Grill, Bar Food",
+    "priceRange": "$$",
+    "sameAs": []
+  }
+  </script>
+
   <style>
-    /* ===========================
-       ROOT VARIABLES
-    ============================ */
     :root{
       --gold:#f4c623;
       --gold2:#ff8a2a;
@@ -49,11 +76,45 @@
 
     a{color:inherit;text-decoration:none;}
 
-    /* ===========================
-       NAVBAR
-    ============================ */
+    /* TOP TICKER */
+    .ticker{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      background:linear-gradient(90deg,rgba(244,198,35,0.25),rgba(0,0,0,0.95));
+      color:#fff;
+      font-size:11px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:4px 14px;
+      border-bottom:1px solid rgba(255,255,255,0.15);
+    }
+    .ticker-label{
+      font-weight:600;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      font-size:10px;
+    }
+    .ticker-text{
+      white-space:nowrap;
+      overflow:hidden;
+    }
+    .ticker-text span{
+      display:inline-block;
+      padding-left:100%;
+      animation: tickerMove 18s linear infinite;
+    }
+    @keyframes tickerMove{
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-100%);}
+    }
+
+    /* NAVBAR */
     header{
-      position:fixed;top:0;left:0;width:100%;z-index:1000;
+      position:fixed;top:23px;left:0;width:100%;z-index:998;
       background:rgba(0,0,0,0.7);
       backdrop-filter:blur(16px);
       border-bottom:1px solid rgba(255,255,255,0.08);
@@ -62,6 +123,7 @@
     header.scrolled{
       background:rgba(0,0,0,0.97);
       box-shadow:var(--shadow-soft);
+      top:0;
     }
     .nav{
       max-width:1200px;margin:auto;padding:10px 20px;
@@ -126,12 +188,10 @@
       cursor:pointer;
     }
 
-    /* ===========================
-       HERO SECTION
-    ============================ */
+    /* HERO */
     .hero{
       max-width:1200px;margin:auto;
-      padding:140px 20px 80px;
+      padding:170px 20px 80px;
       display:grid;grid-template-columns:1.3fr 1fr;gap:40px;
       align-items:center;
     }
@@ -153,8 +213,6 @@
       animation: glowPulse 4.2s ease-in-out infinite alternate,
                  floatUpDown 7s ease-in-out infinite;
     }
-
-    /* Neon ring behind logo */
     .hero-logo-wrap::before{
       content:"";
       position:absolute;
@@ -166,8 +224,6 @@
       z-index:1;
       animation: rotateRing 9s linear infinite;
     }
-
-    /* Shimmer sweep over logo */
     .hero-logo-wrap::after{
       content:"";
       position:absolute;
@@ -178,7 +234,6 @@
       opacity:0;
       animation: shimmerSweep 4.8s ease-in-out infinite;
     }
-
     .hero-logo-wrap:hover .hero-logo{
       transform:scale(1.08) rotate(-3deg);
       box-shadow:0 0 22px rgba(255,200,0,0.9);
@@ -280,9 +335,18 @@
       transform:perspective(800px) rotateX(4deg) rotateY(-4deg) translateY(-4px);
     }
 
-    /* ===========================
-       EVENT BANNER
-    ============================ */
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* EVENT BANNER */
     .advert{
       max-width:1200px;margin:auto;padding:20px;
     }
@@ -291,10 +355,8 @@
       box-shadow:var(--shadow-lg);
     }
 
-    /* ===========================
-       SECTION BASICS
-    ============================ */
-    section{max-width:1200px;margin:auto;padding:40px 20px;}
+    /* SECTIONS */
+    main section{max-width:1200px;margin:auto;padding:40px 20px;}
     .title{
       font-size:22px;letter-spacing:0.16em;margin-bottom:6px;
       text-transform:uppercase;
@@ -322,9 +384,30 @@
     .card h3{font-size:16px;margin-bottom:6px;}
     .card p{font-size:13px;color:var(--muted);}
 
-    /* ===========================
-       GALLERY
-    ============================ */
+    /* UPCOMING EVENTS */
+    .events-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+    .event-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:11px;
+      padding:4px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.2);
+      margin-bottom:8px;
+    }
+    .event-meta{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    /* GALLERY */
     .gallery{
       column-count:3;column-gap:15px;margin-top:18px;
     }
@@ -351,9 +434,66 @@
       box-shadow:var(--shadow-lg);
     }
 
-    /* ===========================
-       CONTACT
-    ============================ */
+    /* PACKAGES */
+    .packages{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+    .package-price{
+      font-size:18px;
+      font-weight:700;
+      margin:4px 0;
+      color:var(--gold);
+    }
+    .package-features{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .package-features li{
+      margin-bottom:4px;
+    }
+
+    /* REVIEWS */
+    .reviews{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
+    }
+    .review-stars{
+      color:var(--gold);
+      font-size:13px;
+      margin-bottom:4px;
+    }
+    .review-name{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    /* MAP */
+    .map-box{
+      background:var(--dark);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.1);
+      padding:14px;
+      box-shadow:var(--shadow-soft);
+    }
+    .map-frame{
+      width:100%;
+      height:260px;
+      border-radius:16px;
+      border:0;
+      background:#000;
+    }
+    .map-note{
+      font-size:11px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    /* CONTACT */
     .contact-box{
       background:var(--dark);
       border-radius:var(--radius);
@@ -366,18 +506,73 @@
       margin-bottom:8px;font-size:13px;color:var(--muted);
     }
 
-    /* ===========================
-       FOOTER
-    ============================ */
+    /* FOOTER */
     footer{
       margin-top:40px;text-align:center;padding:18px 20px;
       color:var(--muted);font-size:12px;
       border-top:1px solid rgba(255,255,255,0.1);
     }
+    .footer-inner{
+      max-width:1200px;margin:0 auto;
+      display:flex;flex-wrap:wrap;align-items:center;
+      justify-content:space-between;gap:10px;
+    }
+    .footer-social{
+      display:flex;gap:10px;flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .footer-social a{
+      width:26px;height:26px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      border:1px solid rgba(255,255,255,0.25);
+      font-size:13px;
+    }
 
-    /* ===========================
-       ANIMATIONS
-    ============================ */
+    /* FLOATING BUTTONS */
+    .floating-whatsapp{
+      position:fixed;
+      right:14px;
+      bottom:18px;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      background:#25d366;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.6);
+      z-index:950;
+    }
+
+    .back-to-top{
+      position:fixed;
+      right:16px;
+      bottom:75px;
+      width:32px;height:32px;
+      border-radius:50%;
+      border:none;
+      background:rgba(0,0,0,0.8);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:16px;
+      box-shadow:0 14px 24px rgba(0,0,0,0.8);
+      opacity:0;
+      pointer-events:none;
+      transition:0.3s;
+      z-index:949;
+    }
+    .back-to-top.show{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+
+    /* ANIMATIONS */
     @keyframes glowPulse{
       0%{
         filter:drop-shadow(0 0 6px rgba(255,200,0,0.4))
@@ -419,13 +614,11 @@
       }
     }
 
-    /* ===========================
-       RESPONSIVE
-    ============================ */
+    /* RESPONSIVE */
     @media(max-width:900px){
       .hero{
         grid-template-columns:1fr;
-        padding-top:125px;
+        padding-top:155px;
       }
       .hero-card{order:-1;margin-bottom:10px;}
       .contact-box{grid-template-columns:1fr;}
@@ -453,40 +646,49 @@
 
 <body>
 
+<!-- TICKER -->
+<div class="ticker" aria-label="Tonight highlight">
+  <span class="ticker-label">TONIGHT</span>
+  <div class="ticker-text">
+    <span>Jersey Night • Happy Hour 5–7 PM • Big Match Live • Table reservations via WhatsApp: +254 791 485669 &nbsp; • &nbsp; Celebrate birthdays, wins, and weekends at Bondo Square Sports Bar.</span>
+  </div>
+</div>
+
 <!-- NAVBAR -->
 <header id="header">
   <div class="nav">
     <div class="nav-left">
-      <img src="logo.png" alt="Bondo Square Logo">
+      <img src="logo.png" alt="Bondo Square logo">
       <div class="nav-brand">
         <span>Bondo Square</span>
         <span>Sports Lounge</span>
       </div>
     </div>
 
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#events">Events</a>
+      <a href="#upcoming">Events</a>
       <a href="#gallery">Gallery</a>
+      <a href="#packages">Packages</a>
       <a href="#contact">Visit Us</a>
       <a href="https://wa.me/254791485669" class="btn-nav">
         <i class="fa-brands fa-whatsapp"></i> Book
       </a>
     </nav>
 
-    <div class="nav-toggle" id="navToggle">
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
       <i class="fa-solid fa-bars-staggered"></i>
-    </div>
+    </button>
   </div>
 </header>
 
 <main>
 
   <!-- HERO -->
-  <section class="hero" id="top">
+  <section class="hero reveal" id="top">
     <div>
       <div class="hero-logo-wrap">
-        <img src="logo.png" class="hero-logo" alt="Bondo Square Logo">
+        <img src="logo.png" class="hero-logo" alt="Bondo Square Sports Bar Logo">
       </div>
 
       <div class="badge">
@@ -533,93 +735,210 @@
     </div>
 
     <aside class="hero-card" aria-label="Bondo Square preview">
-      <img src="0.jpg" alt="Bondo Square Night View">
+      <img src="0.jpg" alt="Night ambience inside Bondo Square Sports Bar">
     </aside>
   </section>
 
-  <!-- EVENT BANNER -->
-  <section class="advert" id="events">
-    <img src="advert.jpg" alt="Featured Event">
+  <!-- ADVERT / FEATURED EVENT POSTER -->
+  <section class="advert reveal" id="events">
+    <img src="advert.jpg" alt="Featured Bondo Square event poster" loading="lazy">
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="reveal">
     <h2 class="title">About Us</h2>
     <p class="subtitle">Premium. Energetic. Unforgettable. Bondo’s home of sports, sound and story-worthy nights.</p>
 
     <div class="grid-3">
-      <div class="card">
+      <article class="card">
         <h3>Live Sports, Clear View</h3>
         <p>
           Multiple HD screens, clean sight-lines and powerful sound so you don’t miss
           a single goal, dunk, try or knockout.
         </p>
-      </div>
+      </article>
 
-      <div class="card highlight">
+      <article class="card highlight">
         <h3>Immersive Ambience</h3>
         <p>
           Neon lights, premium finish, curated playlists and a crowd that loves vibes.
           From derby day to chill nights, we’ve got the mood.
         </p>
-      </div>
+      </article>
 
-      <div class="card">
+      <article class="card">
         <h3>Food, Drinks & Service</h3>
         <p>
           Nyama choma, wings, loaded fries, cocktails, beers and spirits – served by
           a team that treats you like a regular from day one.
         </p>
-      </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section id="upcoming" class="reveal">
+    <h2 class="title">Upcoming Events</h2>
+    <p class="subtitle">Save the dates and pull up with the squad. Here’s what’s loading at Bondo Square.</p>
+
+    <div class="events-grid">
+      <article class="card">
+        <div class="event-tag">
+          <i class="fa-solid fa-shirt"></i> Jersey Night
+        </div>
+        <h3>Friday Jersey Night</h3>
+        <p class="event-meta">Every Friday • From 7:00 PM • Happy hour 5–7 PM</p>
+        <p>Rep your club, match on all screens, photo moments, DJ blends and special bucket offers.</p>
+      </article>
+
+      <article class="card highlight">
+        <div class="event-tag">
+          <i class="fa-solid fa-music"></i> DJ Takeover
+        </div>
+        <h3>Saturday Club Vibes</h3>
+        <p class="event-meta">Every Saturday • From 8:00 PM • Late till late</p>
+        <p>Non-stop mixes, dance floor energy and a premium lounge experience under neon lights.</p>
+      </article>
+
+      <article class="card">
+        <div class="event-tag">
+          <i class="fa-solid fa-cake-candles"></i> Celebrations
+        </div>
+        <h3>Birthdays & Private Nights</h3>
+        <p class="event-meta">Any day • By reservation</p>
+        <p>Book a VIP corner, bring your people, and we’ll help you set up a memorable celebration.</p>
+      </article>
     </div>
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery">
+  <section id="gallery" class="reveal">
     <h2 class="title">Gallery</h2>
     <p class="subtitle">All photos here are real moments from Bondo Square – the people, the colours, the energy.</p>
 
     <div class="gallery">
-      <img src="0.jpg" alt="">
-      <img src="01.jpg" alt="">
-      <img src="02.jpg" alt="">
-      <img src="03.jpg" alt="">
-      <img src="04.jpg" alt="">
-      <img src="05.jpg" alt="">
-      <img src="06.jpg" alt="">
-      <img src="07.jpg" alt="">
-      <img src="08.jpg" alt="">
-      <img src="09.jpg" alt="">
-      <img src="10.jpg" alt="">
-      <img src="11.jpg" alt="">
-      <img src="12.jpg" alt="">
-      <img src="13.jpg" alt="">
-      <img src="14.jpg" alt="">
-      <img src="15.jpg" alt="">
-      <img src="16.jpg" alt="">
-      <img src="17.jpg" alt="">
-      <img src="18.jpg" alt="">
-      <img src="19.jpg" alt="">
-      <img src="20.jpg" alt="">
-      <img src="21.jpg" alt="">
-      <img src="22.jpg" alt="">
-      <img src="23.jpg" alt="">
-      <img src="24.jpg" alt="">
-      <img src="25.jpg" alt="">
-      <img src="26.jpg" alt="">
-      <img src="27.jpg" alt="">
-      <img src="28.jpg" alt="">
-      <img src="29.jpg" alt="">
+      <img src="0.jpg"  alt="Guests enjoying at Bondo Square" loading="lazy">
+      <img src="01.jpg" alt="Bar ambience" loading="lazy">
+      <img src="02.jpg" alt="Friends at a table" loading="lazy">
+      <img src="03.jpg" alt="Night scene" loading="lazy">
+      <img src="04.jpg" alt="Outdoor/indoor mix" loading="lazy">
+      <img src="05.jpg" alt="Crowd enjoying music" loading="lazy">
+      <img src="06.jpg" alt="People watching live match" loading="lazy">
+      <img src="07.jpg" alt="Cocktail or drink moment" loading="lazy">
+      <img src="08.jpg" alt="Neon lighting" loading="lazy">
+      <img src="09.jpg" alt="Bar counter" loading="lazy">
+      <img src="10.jpg" alt="Table and drinks" loading="lazy">
+      <img src="11.jpg" alt="Guests posing for photo" loading="lazy">
+      <img src="12.jpg" alt="Night crowd" loading="lazy">
+      <img src="13.jpg" alt="Bar section" loading="lazy">
+      <img src="14.jpg" alt="DJ or sound vibe" loading="lazy">
+      <img src="15.jpg" alt="Seating area" loading="lazy">
+      <img src="16.jpg" alt="Guests cheering" loading="lazy">
+      <img src="17.jpg" alt="Night lighting" loading="lazy">
+      <img src="18.jpg" alt="Bar action" loading="lazy">
+      <img src="19.jpg" alt="Live moment" loading="lazy">
+      <img src="20.jpg" alt="Social corner" loading="lazy">
+      <img src="21.jpg" alt="Group photo" loading="lazy">
+      <img src="22.jpg" alt="Lounge detail" loading="lazy">
+      <img src="23.jpg" alt="Sport lovers" loading="lazy">
+      <img src="24.jpg" alt="Night crowd again" loading="lazy">
+      <img src="25.jpg" alt="Chill spot" loading="lazy">
+      <img src="26.jpg" alt="Enjoying drinks" loading="lazy">
+      <img src="27.jpg" alt="Happy guests" loading="lazy">
+      <img src="28.jpg" alt="Club lighting" loading="lazy">
+      <img src="29.jpg" alt="Bondo Square view" loading="lazy">
     </div>
   </section>
 
   <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <img id="lightbox-img" src="" alt="">
+  <div id="lightbox" aria-hidden="true">
+    <img id="lightbox-img" src="" alt="Expanded gallery image">
   </div>
 
-  <!-- CONTACT -->
-  <section id="contact">
+  <!-- PACKAGES -->
+  <section id="packages" class="reveal">
+    <h2 class="title">VIP & Packages</h2>
+    <p class="subtitle">Plan your night with ready-made experiences. Perfect for groups, squads, couples and celebrations.</p>
+
+    <div class="packages">
+      <article class="card">
+        <h3>Squad Match Package</h3>
+        <p class="package-price">From KES 3,500</p>
+        <ul class="package-features">
+          <li>Reserved table for up to 4</li>
+          <li>Drinks bucket (customizable)</li>
+          <li>Match on big screen + surround sound</li>
+          <li>Perfect for league games & derbies</li>
+        </ul>
+        <a href="https://wa.me/254791485669" class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> Book Package
+        </a>
+      </article>
+
+      <article class="card highlight">
+        <h3>Birthday Vibes Package</h3>
+        <p class="package-price">From KES 7,500</p>
+        <ul class="package-features">
+          <li>Reserved VIP corner for your crew</li>
+          <li>Basic decor set-up (ask for themes)</li>
+          <li>Customized shout-outs by DJ/MC</li>
+          <li>Photo moments & content-friendly lighting</li>
+        </ul>
+        <a href="https://wa.me/254791485669" class="btn btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> Celebrate Here
+        </a>
+      </article>
+
+      <article class="card">
+        <h3>Date Night Duo</h3>
+        <p class="package-price">From KES 4,000</p>
+        <ul class="package-features">
+          <li>Intimate seating for two</li>
+          <li>Drinks or platter combos</li>
+          <li>Soft ambience + curated playlists</li>
+          <li>Perfect for anniversaries & link-ups</li>
+        </ul>
+        <a href="https://wa.me/254791485669" class="btn btn-outline">
+          <i class="fa-brands fa-whatsapp"></i> Book for Two
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reveal">
+    <h2 class="title">What Guests Say</h2>
+    <p class="subtitle">A few words from people who’ve already experienced Bondo Square Sports Bar.</p>
+
+    <div class="reviews">
+      <article class="card">
+        <div class="review-stars">
+          ★★★★★
+        </div>
+        <p>“Best place to watch football in Bondo. The sound, screens and crowd are on another level. You feel like you’re in the stadium.”</p>
+        <div class="review-name">— Kevin, Football Fan</div>
+      </article>
+
+      <article class="card highlight">
+        <div class="review-stars">
+          ★★★★★
+        </div>
+        <p>“Came here for a birthday and the night was unforgettable. The staff went out of their way to make it special.”</p>
+        <div class="review-name">— Mercy, Birthday Host</div>
+      </article>
+
+      <article class="card">
+        <div class="review-stars">
+          ★★★★★
+        </div>
+        <p>“Vibes, music, lights, everything is on point. It feels like a Nairobi-level lounge right in Bondo.”</p>
+        <div class="review-name">— Brian, Regular Guest</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MAP & CONTACT -->
+  <section id="contact" class="reveal">
     <h2 class="title">Visit Us</h2>
     <p class="subtitle">Pull up, link up, and make a night out of it. For reservations, birthdays, jersey nights and shoots – talk to us.</p>
 
@@ -638,14 +957,25 @@
           <strong>WhatsApp</strong><br>
           <a href="https://wa.me/254791485669" style="color:var(--gold)">Chat with us on WhatsApp</a>
         </div>
-      </div>
-
-      <div>
         <div class="contact-row">
           <strong>Opening Hours</strong><br>
           Mon – Thu: 4:00 PM – Late<br>
           Fri – Sat: 3:00 PM – Very Late<br>
           Sunday: 2:00 PM – 11:00 PM
+        </div>
+      </div>
+
+      <div class="map-box">
+        <!-- Replace the src below with your real Google Maps embed link when ready -->
+        <iframe
+          class="map-frame"
+          title="Bondo Square Sports Bar location map"
+          loading="lazy"
+          src="https://www.google.com/maps/embed?pb="
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-note">
+          Map placeholder – update this embed with your exact Google Maps location link.
         </div>
       </div>
     </div>
@@ -655,40 +985,77 @@
 
 <!-- FOOTER -->
 <footer>
-  © <span id="year"></span> Bondo Square Sports Bar – All Rights Reserved.
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Bondo Square Sports Bar – All Rights Reserved.</div>
+    <div class="footer-social">
+      <a href="#" title="Instagram (add your link)"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" title="Facebook (add your link)"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://wa.me/254791485669" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
 </footer>
+
+<!-- FLOATING WHATSAPP & BACK TO TOP -->
+<a href="https://wa.me/254791485669" class="floating-whatsapp" title="Chat with us on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
 
 <!-- SCRIPTS -->
 <script>
-  // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Header scroll effect
   const header = document.getElementById("header");
+  const backToTop = document.getElementById("backToTop");
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) header.classList.add("scrolled");
+    if (window.scrollY > 80) header.classList.add("scrolled");
     else header.classList.remove("scrolled");
+
+    if(window.scrollY > 350){
+      backToTop.classList.add("show");
+    }else{
+      backToTop.classList.remove("show");
+    }
   });
 
-  // Mobile nav toggle
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
   navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("open");
   });
 
-  // Lightbox
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lightbox-img");
   document.querySelectorAll(".gallery img").forEach(img => {
     img.addEventListener("click", () => {
       lbImg.src = img.src;
       lb.style.display = "flex";
+      lb.setAttribute("aria-hidden","false");
     });
   });
   lb.addEventListener("click", () => {
     lb.style.display = "none";
+    lb.setAttribute("aria-hidden","true");
   });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
