@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bondo Square Nightclub & Sports Bar | Neon Lounge Experience</title>
+  <title>Bondo Square Nightclub & Sports Bar | Festive Neon Lounge</title>
 
   <!-- SEO -->
-  <meta name="description" content="Bondo Square Nightclub & Sports Bar – a neon-lit nightlife and sports lounge in Bondo, Kenya. Club vibes, premium sound, live sports, DJ nights and unforgettable experiences.">
-  <meta name="keywords" content="Bondo Square, Nightclub Bondo, Bondo Nightlife, Sports Bar Kenya, Lounge, Club, DJ, Live Music">
+  <meta name="description" content="Bondo Square Nightclub & Sports Bar – a neon-lit nightlife and sports lounge in Bondo, Kenya. Club vibes, premium sound, live sports, DJ nights, Christmas parties and unforgettable experiences.">
+  <meta name="keywords" content="Bondo Square, Nightclub Bondo, Bondo Nightlife, Sports Bar Kenya, Lounge, Club, DJ, Live Music, Christmas Party">
   <meta name="author" content="Bondo Square Sports Bar" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bondo Square Nightclub & Sports Bar | Neon Lounge in Bondo">
-  <meta property="og:description" content="Neon lights, live DJs, big-screen sports and unforgettable vibes at Bondo Square in Bondo, Kenya.">
+  <meta property="og:title" content="Bondo Square Nightclub & Sports Bar | Festive Neon Lounge in Bondo">
+  <meta property="og:description" content="Neon lights, live DJs, Christmas parties, big-screen football and unforgettable vibes at Bondo Square in Bondo, Kenya.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="logo.png">
 
@@ -49,6 +49,8 @@
       --club2:#00e5ff;
       --accent:#ff4ecd;
       --gold:#f4c623;
+      --red:#ff1744;
+      --green:#22c55e;
       --bg:#020010;
       --dark:#070017;
       --text:#ffffff;
@@ -73,9 +75,30 @@
         radial-gradient(circle at 50% 120%, rgba(255,78,205,0.55) 0, #020010 65%);
       color:var(--text);
       overflow-x:hidden;
+      position:relative;
     }
 
     a{color:inherit;text-decoration:none;}
+
+    /* SNOW (XMAS) */
+    .snow{
+      pointer-events:none;
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      z-index:1;
+      overflow:hidden;
+    }
+    .snowflake{
+      position:absolute;
+      top:-10px;
+      color:rgba(255,255,255,0.8);
+      font-size:10px;
+      animation: fall linear infinite;
+    }
+    @keyframes fall{
+      0%{transform:translateY(-10px);}
+      100%{transform:translateY(110vh);}
+    }
 
     /* TOP TICKER */
     .ticker{
@@ -84,20 +107,23 @@
       left:0;
       width:100%;
       z-index:999;
-      background:linear-gradient(90deg,rgba(138,43,226,0.6),rgba(2,0,16,0.98));
+      background:linear-gradient(90deg,rgba(220,38,38,0.8),rgba(34,197,94,0.9));
       color:#fff;
       font-size:11px;
       display:flex;
       align-items:center;
       gap:10px;
       padding:4px 14px;
-      border-bottom:1px solid rgba(255,255,255,0.18);
+      border-bottom:1px solid rgba(255,255,255,0.3);
     }
     .ticker-label{
-      font-weight:600;
+      font-weight:700;
       letter-spacing:0.18em;
       text-transform:uppercase;
       font-size:10px;
+      display:flex;
+      align-items:center;
+      gap:4px;
     }
     .ticker-text{
       white-space:nowrap;
@@ -129,6 +155,8 @@
     .nav{
       max-width:1200px;margin:auto;padding:10px 20px;
       display:flex;align-items:center;justify-content:space-between;
+      position:relative;
+      z-index:3;
     }
     .nav-left{
       display:flex;align-items:center;gap:10px;
@@ -197,6 +225,8 @@
       padding:40px 20px 20px;
       display:grid;grid-template-columns:1.1fr 1fr;gap:40px;
       align-items:center;
+      position:relative;
+      z-index:2;
     }
 
     .hero-logo-wrap{
@@ -240,6 +270,21 @@
     .hero-logo-wrap:hover .hero-logo{
       transform:scale(1.08) rotate(-3deg);
       box-shadow:0 0 22px rgba(0,229,255,0.9);
+    }
+
+    .xmas-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:4px 12px;
+      border-radius:999px;
+      border:1px solid rgba(248,250,252,0.8);
+      background:linear-gradient(90deg,rgba(220,38,38,0.9),rgba(34,197,94,0.9));
+      font-size:11px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+      color:#fff;
     }
 
     .badge{
@@ -336,6 +381,8 @@
       max-width:1200px;
       margin:0 auto;
       padding:160px 20px 10px;
+      position:relative;
+      z-index:2;
     }
 
     .fixtures-title{
@@ -447,13 +494,8 @@
       gap:6px;
       flex-wrap:wrap;
     }
-    .team-logo{
-      width:22px;
-      height:22px;
-      object-fit:contain;
-      border-radius:4px;
-      background:#000;
-      border:1px solid rgba(255,255,255,0.18);
+    .fixture-teams strong{
+      font-weight:600;
     }
     .fixture-vs{
       font-size:10px;
@@ -466,13 +508,20 @@
       color:var(--muted);
       font-size:10px;
     }
+    .fixture-league{
+      font-weight:600;
+    }
+    .fixture-label{
+      font-size:9px;
+      opacity:0.9;
+    }
     .live-badge{
       display:inline-flex;
       align-items:center;
       gap:4px;
       padding:2px 7px;
       border-radius:999px;
-      background:#ff1744;
+      background:var(--red);
       color:#fff;
       font-size:9px;
       font-weight:700;
@@ -483,26 +532,6 @@
       font-size:9px;
     }
 
-    .fixtures-countdown{
-      margin-top:10px;
-      padding:6px 8px;
-      border-radius:12px;
-      background:rgba(0,0,0,0.5);
-      border:1px solid rgba(255,255,255,0.18);
-      font-size:11px;
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      color:var(--muted);
-    }
-    .fixtures-countdown .label{
-      text-transform:uppercase;
-      letter-spacing:0.12em;
-      font-size:10px;
-    }
-    .fixtures-countdown strong{
-      color:var(--club2);
-    }
     .fixtures-note{
       font-size:9px;
       color:var(--muted);
@@ -510,13 +539,48 @@
       opacity:0.8;
     }
 
-    /* ADVERT */
+    /* ADVERT + FESTIVE COUNTDOWN */
     .advert{
       max-width:1200px;margin:auto;padding:120px 20px 10px;
+      position:relative;
+      z-index:2;
     }
     .advert img{
       width:100%;border-radius:var(--radius);
       box-shadow:var(--shadow-lg);
+    }
+
+    .festive-countdown{
+      margin:16px auto 0;
+      max-width:1200px;
+      padding:10px 14px;
+      border-radius:var(--radius);
+      background:linear-gradient(90deg,rgba(220,38,38,0.9),rgba(34,197,94,0.9));
+      border:1px solid rgba(255,255,255,0.4);
+      color:#fff;
+      font-size:13px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:var(--shadow-lg);
+      position:relative;
+      z-index:2;
+    }
+    .festive-countdown .label{
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      font-size:10px;
+      opacity:0.9;
+    }
+    .festive-countdown strong{
+      font-weight:700;
+    }
+    #eventTimer{
+      font-family:monospace;
+      font-size:14px;
+      font-weight:700;
     }
 
     /* SECTION BASE */
@@ -677,6 +741,7 @@
       color:var(--muted);font-size:12px;
       border-top:1px solid rgba(255,255,255,0.1);
       background:rgba(2,0,16,0.95);
+      position:relative;z-index:2;
     }
     .footer-inner{
       max-width:1200px;margin:0 auto;
@@ -821,17 +886,36 @@
     }
     @media(max-width:560px){
       .gallery{column-count:1;}
+      .festive-countdown{
+        flex-direction:column;
+        align-items:flex-start;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- LIGHT SNOW EFFECT -->
+<div class="snow" aria-hidden="true">
+  <span class="snowflake" style="left:5%; animation-duration:9s; animation-delay:0s;">❄</span>
+  <span class="snowflake" style="left:18%; animation-duration:11s; animation-delay:1s;">✻</span>
+  <span class="snowflake" style="left:30%; animation-duration:8s; animation-delay:2s;">❄</span>
+  <span class="snowflake" style="left:47%; animation-duration:10s; animation-delay:0.5s;">✼</span>
+  <span class="snowflake" style="left:60%; animation-duration:12s; animation-delay:1.5s;">❄</span>
+  <span class="snowflake" style="left:75%; animation-duration:9s; animation-delay:0.3s;">✻</span>
+  <span class="snowflake" style="left:88%; animation-duration:13s; animation-delay:2.2s;">❄</span>
+</div>
+
 <!-- TICKER -->
-<div class="ticker" aria-label="Tonight highlight">
-  <span class="ticker-label">TONIGHT</span>
+<div class="ticker" aria-label="Festive highlight">
+  <span class="ticker-label">
+    <i class="fa-solid fa-gift"></i> FESTIVE
+  </span>
   <div class="ticker-text">
-    <span>Neon Night • Live DJ • Big Match on Screens • Happy Hour 5–7 PM • Table reservations via WhatsApp: +254 791 485669 • Bondo’s official night club & sports lounge.</span>
+    <span>
+      Christmas & New Year Party at Bondo Square • Live DJ • Festive cocktails • Football on big screens • WhatsApp bookings: +254 791 485669 • Merry Christmas & Happy New Year from Bondo Square Nightclub & Sports Bar.
+    </span>
   </div>
 </div>
 
@@ -868,14 +952,28 @@
 
   <!-- ADVERT FIRST -->
   <section class="advert reveal" id="advert-top">
-    <img src="advert.jpg" alt="Bondo Square Event Banner">
+    <div class="xmas-badge">
+      🎄 Christmas & New Year Season • Festive Nights at Bondo Square
+    </div>
+    <img src="advert.jpg" alt="Bondo Square Festive Event Banner">
+  </section>
+
+  <!-- FESTIVE EVENT COUNTDOWN -->
+  <section class="festive-countdown">
+    <div>
+      <span class="label">Countdown to festive event</span><br>
+      <span id="eventName"><strong>Christmas Party at Bondo Square</strong></span>
+    </div>
+    <div>
+      <span id="eventTimer">Loading...</span>
+    </div>
   </section>
 
   <!-- FIXTURES SECOND -->
   <section class="fixtures-section reveal" id="fixtures">
     <h2 class="fixtures-title">TOP LEAGUE FIXTURES</h2>
     <p class="fixtures-subtitle">
-      EPL, La Liga, Serie A, UCL, Ligue 1 and KPL – live football fixtures with real club logos, all from today’s schedule.
+      EPL, La Liga, Serie A, UCL, Ligue 1 and KPL – key fixtures for the festive period at Bondo Square. Names only, simple and clean.
     </p>
 
     <aside class="hero-card" aria-label="Top leagues fixtures">
@@ -899,18 +997,17 @@
             <button data-league="KPL">KPL</button>
           </div>
 
-          <!-- Fixtures List With Logos - JS fills -->
+          <!-- Fixtures List Without Logos - JS fills -->
           <div class="fixtures-list">
             <div class="fixture-row">
               <div class="fixture-teams">
-                <img class="team-logo home-logo" src="logo.png" alt="">
                 <strong class="home-name">Home</strong>
                 <span class="fixture-vs">vs</span>
-                <img class="team-logo away-logo" src="logo.png" alt="">
                 <strong class="away-name">Away</strong>
               </div>
               <div class="fixture-meta">
                 <div class="live-container"></div>
+                <div class="fixture-league">League</div>
                 <div class="fixture-time">Time</div>
                 <div class="fixture-label">Note</div>
               </div>
@@ -918,14 +1015,13 @@
 
             <div class="fixture-row">
               <div class="fixture-teams">
-                <img class="team-logo home-logo" src="logo.png" alt="">
                 <strong class="home-name">Home</strong>
                 <span class="fixture-vs">vs</span>
-                <img class="team-logo away-logo" src="logo.png" alt="">
                 <strong class="away-name">Away</strong>
               </div>
               <div class="fixture-meta">
                 <div class="live-container"></div>
+                <div class="fixture-league">League</div>
                 <div class="fixture-time">Time</div>
                 <div class="fixture-label">Note</div>
               </div>
@@ -933,14 +1029,13 @@
 
             <div class="fixture-row">
               <div class="fixture-teams">
-                <img class="team-logo home-logo" src="logo.png" alt="">
                 <strong class="home-name">Home</strong>
                 <span class="fixture-vs">vs</span>
-                <img class="team-logo away-logo" src="logo.png" alt="">
                 <strong class="away-name">Away</strong>
               </div>
               <div class="fixture-meta">
                 <div class="live-container"></div>
+                <div class="fixture-league">League</div>
                 <div class="fixture-time">Time</div>
                 <div class="fixture-label">Note</div>
               </div>
@@ -948,29 +1043,21 @@
 
             <div class="fixture-row">
               <div class="fixture-teams">
-                <img class="team-logo home-logo" src="logo.png" alt="">
                 <strong class="home-name">Home</strong>
                 <span class="fixture-vs">vs</span>
-                <img class="team-logo away-logo" src="logo.png" alt="">
                 <strong class="away-name">Away</strong>
               </div>
               <div class="fixture-meta">
                 <div class="live-container"></div>
+                <div class="fixture-league">League</div>
                 <div class="fixture-time">Time</div>
                 <div class="fixture-label">Note</div>
               </div>
             </div>
-          </div>
-
-          <!-- Countdown -->
-          <div class="fixtures-countdown">
-            <span class="label">Next Big Match</span>
-            <span id="nextMatchName"><strong>Loading...</strong></span>
-            <span id="nextMatchTimer">Loading...</span>
           </div>
 
           <p class="fixtures-note">
-            Fixtures and logos load in real-time from a football API (top leagues only). Update your API key and league IDs in the JavaScript section.
+            Edit the list of fixtures in the JavaScript <code>fixturesData</code> section whenever you have new matches.
           </p>
         </div>
 
@@ -997,20 +1084,20 @@
 
         <h1>Welcome to <span>Bondo Square Nightclub & Sports Bar</span></h1>
         <p>
-          Neon lights, deep bass, live DJs and all the big games – one space where
+          Neon lights, deep bass, Christmas lights and all the big games – one space where
           club life and sports energy meet, right in the heart of Bondo.
         </p>
 
         <div class="hero-highlights">
-          <div class="hero-chip"><i class="fa-solid fa-music"></i> Live DJ & curated mixes</div>
+          <div class="hero-chip"><i class="fa-solid fa-music"></i> Live DJ & festive mixes</div>
           <div class="hero-chip"><i class="fa-solid fa-tv"></i> All major games on screen</div>
-          <div class="hero-chip"><i class="fa-solid fa-champagne-glasses"></i> Cocktails, shots & buckets</div>
+          <div class="hero-chip"><i class="fa-solid fa-champagne-glasses"></i> Christmas cocktails & shots</div>
           <div class="hero-chip"><i class="fa-solid fa-bolt"></i> Club lighting & sound</div>
         </div>
 
         <div class="hero-buttons">
           <a href="https://wa.me/254791485669" class="btn btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> Book a Table / VIP
+            <i class="fa-brands fa-whatsapp"></i> Book a Festive Table / VIP
           </a>
           <a href="#gallery" class="btn btn-outline">
             <i class="fa-solid fa-camera"></i> See the Night Life
@@ -1034,50 +1121,47 @@
       </div>
 
       <div class="hero-intro-visual">
-        <strong>Why people love Bondo Square:</strong><br><br>
-        • The only spot in Bondo that feels like a city nightclub.<br>
-        • Real football atmosphere when the big games are on.<br>
-        • Club lighting, sound and DJs that keep you till late.<br>
-        • Perfect for birthdays, jersey nights and group hangs.<br><br>
-        Book your crew once – they’ll keep asking to come back.
+        <strong>Festive season at Bondo Square:</strong><br><br>
+        • Christmas & New Year playlists with live DJs.<br>
+        • Big matches on screens so you don’t miss your team.<br>
+        • Perfect for office parties, birthdays & year-end link-ups.<br>
+        • WhatsApp for VIP and group bookings: <strong>+254 791 485669</strong>.<br><br>
+        Pull up with your people and let the year end in style.
       </div>
     </div>
   </section>
 
   <!-- UPCOMING EVENTS -->
   <section id="upcoming" class="reveal">
-    <h2 class="title">Club Nights & Events</h2>
-    <p class="subtitle">Lock in the days. These are the nights that keep Bondo talking.</p>
+    <h2 class="title">Club Nights & Festive Events</h2>
+    <p class="subtitle">Lock in the days. These are the nights carrying Bondo into Christmas & New Year.</p>
 
     <div class="events-grid">
+      <article class="card highlight">
+        <div class="event-tag">
+          <i class="fa-solid fa-tree"></i> Xmas Party
+        </div>
+        <h3>Christmas Eve Neon Party</h3>
+        <p class="event-meta">24th December • From 8:00 PM • Till late</p>
+        <p>Christmas mixes, special cocktails and full club lighting. Wear a touch of red or green and come ready to celebrate.</p>
+      </article>
+
+      <article class="card">
+        <div class="event-tag">
+          <i class="fa-solid fa-champagne-glasses"></i> New Year
+        </div>
+        <h3>New Year’s Countdown Night</h3>
+        <p class="event-meta">31st December • From 8:00 PM • Countdown to midnight</p>
+        <p>Close the year with music, friends and a countdown that turns into the first party of the new year.</p>
+      </article>
+
       <article class="card">
         <div class="event-tag">
           <i class="fa-solid fa-shirt"></i> Jersey Night
         </div>
-        <h3>Friday Jersey Night</h3>
+        <h3>Festive Jersey Fridays</h3>
         <p class="event-meta">Every Friday • From 7:00 PM • Happy hour 5–7 PM</p>
-        <p>Club lights on, jerseys out, football on all screens and offers on buckets.
-          Perfect for fans and squads.</p>
-      </article>
-
-      <article class="card highlight">
-        <div class="event-tag">
-          <i class="fa-solid fa-music"></i> DJ Takeover
-        </div>
-        <h3>Saturday Neon Sessions</h3>
-        <p class="event-meta">Every Saturday • From 8:00 PM • Till late</p>
-        <p>Live DJs, club mixes, sing-alongs and dance floor energy. This is the
-          flagship nightlife session at Bondo Square.</p>
-      </article>
-
-      <article class="card">
-        <div class="event-tag">
-          <i class="fa-solid fa-cake-candles"></i> VIP & Celebrations
-        </div>
-        <h3>Birthdays & Private Nights</h3>
-        <p class="event-meta">Any day • By reservation</p>
-        <p>Customized club experience with VIP corner, decor and shout-outs for
-          your special night.</p>
+        <p>Jerseys on, football on all screens and offers on buckets. Great for fans, friends and football groups.</p>
       </article>
     </div>
   </section>
@@ -1085,7 +1169,7 @@
   <!-- GALLERY -->
   <section id="gallery" class="reveal">
     <h2 class="title">Nightlife Gallery</h2>
-    <p class="subtitle">Shots from real nights at Bondo Square – the colours, the faces, the energy, the glow.</p>
+    <p class="subtitle">Shots from real nights at Bondo Square – colours, faces, energy and glow.</p>
 
     <div class="gallery">
       <img src="0.jpg"  alt="Guests enjoying at Bondo Square" loading="lazy">
@@ -1128,8 +1212,8 @@
 
   <!-- PACKAGES -->
   <section id="packages" class="reveal">
-    <h2 class="title">VIP & Club Packages</h2>
-    <p class="subtitle">Plan the night before you arrive. Packages built for squads, birthdays, and serious night-outs.</p>
+    <h2 class="title">VIP & Festive Packages</h2>
+    <p class="subtitle">Plan the night before you arrive. Packages for squads, birthdays and serious festive nights.</p>
 
     <div class="packages">
       <article class="card">
@@ -1138,7 +1222,7 @@
         <ul class="package-features">
           <li>Reserved table for up to 4</li>
           <li>Drinks bucket (customizable)</li>
-          <li>All screens tuned to the game</li>
+          <li>All screens tuned to the match</li>
           <li>Perfect for league nights & finals</li>
         </ul>
         <a href="https://wa.me/254791485669" class="btn btn-outline">
@@ -1147,13 +1231,13 @@
       </article>
 
       <article class="card highlight">
-        <h3>Birthday Neon Package</h3>
+        <h3>Christmas / Birthday Package</h3>
         <p class="package-price">From KES 7,500</p>
         <ul class="package-features">
           <li>VIP corner for your crew</li>
           <li>Basic decor + photo moments</li>
-          <li>DJ shout-outs for the birthday person</li>
-          <li>Perfect for cake cuts & content</li>
+          <li>DJ shout-outs for the main person</li>
+          <li>Perfect for Christmas babies & December birthdays</li>
         </ul>
         <a href="https://wa.me/254791485669" class="btn btn-primary">
           <i class="fa-brands fa-whatsapp"></i> Celebrate Here
@@ -1167,7 +1251,7 @@
           <li>Intimate table for two</li>
           <li>Drinks or platter combo</li>
           <li>Soft light, curated music</li>
-          <li>Great for anniversaries & link-ups</li>
+          <li>Great for festive link-ups & anniversaries</li>
         </ul>
         <a href="https://wa.me/254791485669" class="btn btn-outline">
           <i class="fa-brands fa-whatsapp"></i> Book for Two
@@ -1194,7 +1278,7 @@
         <div class="review-stars">
           ★★★★★
         </div>
-        <p>“We did a birthday here and everyone keeps talking about it. The photos, the lighting, the vibes… elite.”</p>
+        <p>“We did a Christmas birthday here and everyone keeps talking about it. The photos, the lighting, the vibes… elite.”</p>
         <div class="review-name">— Mercy, Birthday Host</div>
       </article>
 
@@ -1211,7 +1295,7 @@
   <!-- MAP & CONTACT -->
   <section id="contact" class="reveal">
     <h2 class="title">Visit the Club</h2>
-    <p class="subtitle">Pull up, link up, and make a night out of it. For VIP, birthdays, jersey nights and content shoots – talk to us.</p>
+    <p class="subtitle">Pull up, link up, and make a night out of it. For VIP, birthdays, jersey nights and festive events – talk to us.</p>
 
     <div class="contact-box">
       <div>
@@ -1257,7 +1341,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div>© <span id="year"></span> Bondo Square Nightclub & Sports Bar – All Rights Reserved.</div>
+    <div>© <span id="year"></span> Bondo Square Nightclub & Sports Bar – Merry Christmas & Happy New Year.</div>
     <div class="footer-social">
       <a href="#" title="Instagram (add your link)"><i class="fa-brands fa-instagram"></i></a>
       <a href="#" title="Facebook (add your link)"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1277,7 +1361,7 @@
 
 <!-- SCRIPTS -->
 <script>
-  /* -------- BASIC UI -------- */
+  /* BASIC UI */
   document.getElementById('year').textContent = new Date().getFullYear();
 
   const header = document.getElementById("header");
@@ -1328,114 +1412,38 @@
   }, { threshold: 0.15 });
   reveals.forEach(el => observer.observe(el));
 
-  /* =====================================================
-     REAL-TIME FOOTBALL FIXTURES (TOP LEAGUES ONLY)
-     ===================================================== */
+  /* STATIC FOOTBALL FIXTURES (EDIT THIS LIST TO UPDATE MATCHES) */
+  const fixturesData = [
+    // EPL
+    { home:"Arsenal",   away:"Man City",     league:"Premier League", time:"Sat • 7:30 PM",  label:"Super Saturday",   live:true  },
+    { home:"Liverpool", away:"Chelsea",      league:"Premier League", time:"Sun • 7:00 PM",  label:"Super Sunday",     live:false },
+    { home:"Man United",away:"Spurs",        league:"Premier League", time:"Sun • 9:30 PM",  label:"Late Night EPL",   live:false },
 
-  // TODO: Put your real API details here
-  const API_BASE = "https://v3.football.api-sports.io"; // Example: API-Football
-  const API_KEY  = "YOUR_API_KEY_HERE";                 // <= replace with your key
+    // La Liga
+    { home:"Barcelona", away:"Real Madrid",  league:"La Liga",        time:"Sun • 10:00 PM", label:"El Clásico Night", live:false },
+    { home:"Atleti",    away:"Sevilla",      league:"La Liga",        time:"Sat • 8:30 PM",  label:"La Liga Clash",    live:false },
 
-  // Leagues: IDs below are for API-Football v3 (check docs)
-  const leaguesConfig = [
-    { name: "Premier League", id: 39,  code: "EPL"     },
-    { name: "La Liga",        id: 140, code: "La Liga" },
-    { name: "Serie A",        id: 135, code: "Serie A" },
-    { name: "Ligue 1",        id: 61,  code: "Ligue 1" },
-    { name: "UCL",            id: 2,   code: "UCL"     },
-    // Set correct KPL league ID here from your provider:
-    { name: "KPL",            id: null, code: "KPL"    }
+    // Serie A
+    { home:"Inter Milan",away:"Juventus",    league:"Serie A",        time:"Sat • 9:45 PM",  label:"Italian Derby",    live:false },
+    { home:"AC Milan",  away:"Napoli",       league:"Serie A",        time:"Sun • 9:45 PM",  label:"Serie A Classic",  live:false },
+
+    // Ligue 1
+    { home:"PSG",       away:"Marseille",    league:"Ligue 1",        time:"Fri • 10:00 PM", label:"Le Classique",     live:false },
+    { home:"Lyon",      away:"Monaco",       league:"Ligue 1",        time:"Sat • 10:00 PM", label:"French Night",     live:false },
+
+    // KPL
+    { home:"Gor Mahia", away:"AFC Leopards", league:"KPL",            time:"Sun • 4:00 PM",  label:"KPL Big Derby",    live:false },
+    { home:"Tusker",    away:"Bandari",      league:"KPL",            time:"Sat • 3:00 PM",  label:"KPL Weekend",      live:false },
+
+    // UCL nights
+    { home:"UCL Night", away:"Key Fixtures", league:"UCL",            time:"Wed • 10:00 PM", label:"All key games live",live:false },
+    { home:"UCL Night", away:"2nd Leg",      league:"UCL",            time:"Tue • 10:00 PM", label:"Knockout Drama",   live:false }
   ];
 
-  let fixturesData = [];
   let fixturesOffset = 0;
   let currentLeague = "All";
 
   const fixtureRows = document.querySelectorAll('.fixture-row');
-
-  async function fetchLeagueFixtures(leagueObj) {
-    if (!leagueObj.id) {
-      // No ID configured (e.g. KPL) – skip
-      return [];
-    }
-
-    const today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
-    const url = `${API_BASE}/fixtures?date=${today}&league=${leagueObj.id}&season=2024`;
-
-    try {
-      const res = await fetch(url, {
-        method: "GET",
-        headers: {
-          "x-apisports-key": API_KEY
-          // If your provider uses another header name, change here.
-        }
-      });
-
-      const json = await res.json();
-      const list = json.response || [];
-
-      return list.map(item => ({
-        home:   item.teams?.home?.name || "Home",
-        away:   item.teams?.away?.name || "Away",
-        league: item.league?.name       || leagueObj.name,
-        time:   formatFixtureTime(item.fixture?.date),
-        label:  item.league?.round      || "Live at Bondo Square",
-        live:   item.fixture?.status?.short === "1H" ||
-                item.fixture?.status?.short === "2H" ||
-                item.fixture?.status?.short === "ET" ||
-                item.fixture?.status?.short === "P",
-        homeLogo: item.teams?.home?.logo || "logo.png",
-        awayLogo: item.teams?.away?.logo || "logo.png"
-      }));
-    } catch (e) {
-      console.error("Error loading fixtures for league:", leagueObj.name, e);
-      return [];
-    }
-  }
-
-  function formatFixtureTime(dateStr){
-    if(!dateStr) return "Time TBC";
-    const d = new Date(dateStr);
-    const hours = d.getHours().toString().padStart(2,"0");
-    const mins  = d.getMinutes().toString().padStart(2,"0");
-    return `${d.toLocaleDateString()} • ${hours}:${mins}`;
-  }
-
-  async function loadAllFixtures() {
-    fixturesData = [];
-
-    const promises = leaguesConfig.map(l => fetchLeagueFixtures(l));
-    const results  = await Promise.all(promises);
-
-    results.forEach(list => {
-      fixturesData.push(...list);
-    });
-
-    // Fallback if API returns nothing
-    if(!fixturesData.length){
-      fixturesData = [
-        {
-          home:"Arsenal", away:"Man City", league:"Premier League",
-          time:"Sat • 7:30 PM", label:"Sample Super Saturday",
-          live:false, homeLogo:"arsenal.png", awayLogo:"city.png"
-        },
-        {
-          home:"Barcelona", away:"Real Madrid", league:"La Liga",
-          time:"Sun • 10:00 PM", label:"Sample El Clásico Night",
-          live:false, homeLogo:"barca.png", awayLogo:"madrid.png"
-        },
-        {
-          home:"Gor Mahia", away:"AFC Leopards", league:"KPL",
-          time:"Sun • 4:00 PM", label:"Sample KPL Derby",
-          live:false, homeLogo:"gor.png", awayLogo:"afc.png"
-        }
-      ];
-    }
-
-    fixturesOffset = 0;
-    renderFixtures();
-    setupNextMatchCountdown();
-  }
 
   function getFilteredFixtures(){
     if(currentLeague === "All") return fixturesData;
@@ -1454,18 +1462,16 @@
       const row           = fixtureRows[i];
       const homeNameEl    = row.querySelector('.home-name');
       const awayNameEl    = row.querySelector('.away-name');
-      const homeLogoEl    = row.querySelector('.home-logo');
-      const awayLogoEl    = row.querySelector('.away-logo');
+      const leagueEl      = row.querySelector('.fixture-league');
       const timeEl        = row.querySelector('.fixture-time');
       const labelEl       = row.querySelector('.fixture-label');
       const liveContainer = row.querySelector('.live-container');
 
       if(homeNameEl) homeNameEl.textContent = data.home;
       if(awayNameEl) awayNameEl.textContent = data.away;
-      if(homeLogoEl) homeLogoEl.src = data.homeLogo || "logo.png";
-      if(awayLogoEl) awayLogoEl.src = data.awayLogo || "logo.png";
-      if(timeEl)     timeEl.textContent = data.time;
-      if(labelEl)    labelEl.textContent = data.label;
+      if(leagueEl)   leagueEl.textContent   = data.league;
+      if(timeEl)     timeEl.textContent     = data.time;
+      if(labelEl)    labelEl.textContent    = data.label;
 
       if(liveContainer){
         liveContainer.innerHTML = "";
@@ -1481,7 +1487,7 @@
     fixturesOffset = (fixturesOffset + 1) % source.length;
   }
 
-  // League filter buttons (All / EPL / La Liga / etc.)
+  // League filter buttons
   const filterButtons = document.querySelectorAll('.fixtures-filters button');
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1493,12 +1499,8 @@
     });
   });
 
-  // Auto-rotate fixtures every 10s
-  setInterval(() => {
-    if(fixturesData.length){
-      renderFixtures();
-    }
-  }, 10000);
+  renderFixtures();
+  setInterval(renderFixtures, 10000); // rotate every 10 seconds
 
   /* Rotating picture next to fixtures */
   const heroImages = [
@@ -1516,31 +1518,32 @@
   rotateHeroImage();
   setInterval(rotateHeroImage, 8000);
 
-  /* Countdown to next big match (from fixturesData[0]) */
-  const nextMatchNameEl  = document.getElementById("nextMatchName");
-  const nextMatchTimerEl = document.getElementById("nextMatchTimer");
-  let nextMatchDate = null;
+  /* FESTIVE EVENT COUNTDOWN (Christmas Eve 24 Dec, 8PM) */
+  const eventNameEl  = document.getElementById("eventName");
+  const eventTimerEl = document.getElementById("eventTimer");
 
-  function setupNextMatchCountdown(){
-    if(!fixturesData.length || !nextMatchNameEl || !nextMatchTimerEl) return;
+  function getNextChristmasPartyDate(){
+    const now  = new Date();
+    let year   = now.getFullYear();
+    let target = new Date(year, 11, 24, 20, 0, 0); // 24 Dec, 8 PM (month 11 = December)
 
-    const mainFixture = fixturesData[0];
-    nextMatchNameEl.innerHTML =
-      "<strong>" + mainFixture.home + " vs " + mainFixture.away + "</strong> (" + mainFixture.league + ")";
-
-    // For demo: 24 hours from now. You can parse real kick-off from API date.
-    nextMatchDate = new Date();
-    nextMatchDate.setHours(nextMatchDate.getHours() + 24);
+    if(now > target){
+      year += 1;
+      target = new Date(year, 11, 24, 20, 0, 0);
+    }
+    return target;
   }
 
-  function updateCountdown(){
-    if(!nextMatchDate || !nextMatchTimerEl) return;
+  const eventDate = getNextChristmasPartyDate();
+
+  function updateEventCountdown(){
+    if(!eventTimerEl) return;
 
     const now = new Date().getTime();
-    const distance = nextMatchDate.getTime() - now;
+    const distance = eventDate.getTime() - now;
 
     if(distance <= 0){
-      nextMatchTimerEl.textContent = "Kick-off happening now at Bondo Square!";
+      eventTimerEl.textContent = "The Christmas Party is on now at Bondo Square!";
       return;
     }
 
@@ -1549,16 +1552,15 @@
     const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
     const seconds = Math.floor((distance % (1000*60)) / 1000);
 
-    nextMatchTimerEl.textContent =
+    eventTimerEl.textContent =
       (days ? days + "d " : "") +
       (hours < 10 ? "0"+hours : hours) + "h " +
       (minutes < 10 ? "0"+minutes : minutes) + "m " +
       (seconds < 10 ? "0"+seconds : seconds) + "s";
   }
-  setInterval(updateCountdown, 1000);
 
-  // Kick everything off
-  loadAllFixtures();
+  updateEventCountdown();
+  setInterval(updateEventCountdown, 1000);
 </script>
 
 </body>
